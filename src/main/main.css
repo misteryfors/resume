@@ -1,0 +1,206 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import "./sidebar/sidebar.css";
+@import "./content/content.css";
+@import "./second/secondary.css";
+main {
+  position: relative;
+  width: 100%; /* 100% ширины, чтобы не выходить за пределы экрана */
+  height: 96vh;
+  display: flex;
+  background-color: var(--primary-color-2);
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.02), 0 0 30px rgba(0, 255, 255, 0.02);
+  margin: 2vh;
+  overflow: hidden;
+  font-size: var(--font-size-1);
+  font-weight: 400;
+  color: var(--secondary-color-4);
+}
+main .header-section {
+  height: 40px;
+  padding: 8px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 0 hsla(0, 0%, 0.8%, 0.2), 0 1.5px 0 hsla(240, 7.7%, 2.5%, 0.05), 0 2px 0 hsla(0, 0%, 0.8%, 0.05);
+  box-sizing: border-box;
+}
+main .header-section__name {
+  font-size: var(--font-size-1);
+  font-weight: 400;
+  color: var(--secondary-color-4);
+}
+main .main-section {
+  position: relative;
+  flex-grow: 1;
+  height: 100%;
+  overflow-y: auto;
+  padding: 16px 16px 100px 16px; /* Добавляем отступ справа */
+  display: flex;
+  flex-direction: column;
+}
+main .main-section::-webkit-scrollbar {
+  width: 12px; /* Ширина скроллбара */
+}
+main .main-section::-webkit-scrollbar-track {
+  background: var(--secondary-color-1); /* Цвет дорожки */
+}
+main .main-section::-webkit-scrollbar-thumb {
+  background: #191a1e; /* Цвет ползунка */
+  border-radius: 10px; /* Скругление углов ползунка */
+}
+main .sidebar {
+  flex-shrink: 0;
+  width: 350px;
+  min-height: 100vh;
+  background-color: var(--primary-color-2);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+main .content {
+  flex-grow: 1; /* Занимает оставшееся пространство */
+  min-height: 100vh;
+  background-color: var(--primary-color-3);
+  box-sizing: border-box;
+  min-width: 0;
+  box-sizing: border-box;
+}
+main .secondary-section {
+  flex-shrink: 0;
+  width: 350px;
+  min-height: 100vh;
+  background-color: var(--primary-color-2);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (width <= 1800px) {
+  main .sidebar {
+    width: 300px;
+  }
+  main .secondary-section {
+    width: 300px;
+  }
+}
+@media (width <= 1400px) {
+  main .secondary-section {
+    display: none;
+  }
+}
+@media (width <= 1200px) {
+  main {
+    margin: 2vh;
+  }
+  main .chapter .chapter-grid--many-lines {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    justify-content: space-between;
+  }
+  main .sidebar__toggle::before {
+    padding: 5px;
+  }
+}
+@media (width <= 1000px) {
+  main {
+    flex-direction: column;
+    height: 100%;
+  }
+  main .sidebar {
+    width: 100%;
+    min-height: auto;
+  }
+  main .sidebar__section:first-child {
+    margin-top: 16px;
+  }
+  main .sidebar__section:last-child:after {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    content: "";
+    display: block;
+    margin-top: 16px;
+  }
+  main .sidebar__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  main .sidebar__link {
+    gap: 8px;
+  }
+  main .sidebar__link:hover {
+    border-radius: 25%;
+    filter: drop-shadow(3px 1px 4px var(--shadow-color-1));
+  }
+  main .sidebar__icon {
+    width: 24px;
+    height: 24px;
+  }
+  main .main-section {
+    overflow: visible;
+    padding: 8px;
+  }
+  main .chapter {
+    gap: 0;
+  }
+  main .chapter__details {
+    padding: 16px 8px;
+  }
+  main .chapter__step {
+    width: 16px;
+  }
+  main .chapter__circle {
+    top: 16px;
+    width: 16px;
+    height: 16px;
+  }
+  main .project {
+    gap: 8px;
+  }
+  main .project__description {
+    padding: 8px;
+  }
+}
+@media (width <= 800px) {
+  main .sidebar__section {
+    cursor: none;
+  }
+  main .sidebar__toggle::before {
+    padding: 4px;
+  }
+  main .chapter__list {
+    flex-direction: column;
+  }
+  main .chapter .chapter-grid--one-line {
+    height: 60px;
+    grid-template-rows: 60px;
+  }
+  main .chapter .chapter-grid--many-lines {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    justify-content: space-between;
+  }
+  main .chapter .chapter-grid__section--solo, main .chapter .chapter-grid__section--two-gorizontal, main .chapter .chapter-grid__section--two-vertical, main .chapter .chapter-grid__section--list {
+    padding: 2px;
+  }
+  main .project__card {
+    max-height: 250px;
+  }
+}
+@media (width <= 600px) {
+  main {
+    margin: 0.5vh;
+  }
+  main .chapter .chapter-grid--many-lines {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    overflow: hidden;
+  }
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,71 @@
+@charset "UTF-8";
+.code-block {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 16px;
+  font-family: "Consolas", "Courier New", monospace;
+  color: #d4d4d4;
+  line-height: 1.5em;
+  white-space: pre-wrap;
+  word-break: break-word;
+  width: 100%;
+  border: 1px solid #333;
+  background: var(--secondary-color-2);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  overflow: auto;
+  max-height: 80vh;
+  padding-left: 16px;
+  text-indent: 16px;
+  /* Кросс-браузерная поддержка для исчезающего скроллбара */
+  /* Стили для скроллбара WebKit-браузеров (Chrome, Safari, Edge) */
+  /* Для поддержки плавного скрытия скроллбара на мобильных устройствах */
+}
+.code-block::-webkit-scrollbar {
+  width: 6px; /* Тонкий скроллбар */
+  height: 6px;
+}
+.code-block::-webkit-scrollbar-track {
+  background: transparent; /* Прозрачный трек */
+}
+.code-block::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Прозрачный, почти невидимый */
+  border-radius: 10px;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease; /* Плавное появление */
+}
+.code-block:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5); /* Более заметный при наведении */
+}
+.code-block__selector {
+  color: #569CD6; /* Цвет селекторов */
+}
+.code-block__property {
+  color: #9CDCFE; /* Цвет свойств */
+}
+.code-block__value {
+  color: #CE9178; /* Цвет значений */
+}
+.code-block__punctuation {
+  color: #D4D4D4; /* Цвет для двоеточий и фигурных скобок */
+}
+
+.code-block[contenteditable=true] {
+  outline: none;
+  caret-color: #ffffff;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+@media (width <= 1400px) {
+  .code-block[contenteditable=true] {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+@media (width <= 1000px) {
+  .code-block[contenteditable=true] {
+    font-size: 10px;
+  }
+}/*# sourceMappingURL=code-block.css.map */

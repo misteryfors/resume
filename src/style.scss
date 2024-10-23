@@ -1,0 +1,79 @@
+@import "reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@100..900&display=swap');
+@import "./mixins/fonts-mixin.scss";
+
+:root{
+    --primary-color-1:#111214;
+    --primary-color-2:#2c2d31;
+    --primary-color-3:#323338;
+
+    --secondary-color-1:#393a3f;
+    --secondary-color-2:#1e1e1e;
+    --secondary-color-3:oklab(0.686679 -0.00398019 -0.0150182);
+    --secondary-color-4:#dddddd;
+
+    --shadow-color-1:#4444dd79;
+    --shadow-color-2:#4D5BCE;
+    --shadow-color-2:rgba(0, 0, 0, 0.3);
+
+    --font-size-1:30px;
+    --font-size-2:24px;
+    --font-size-3:18px;
+    --font-size-4:16px;
+
+    --code-font-size:16px
+
+}
+
+
+body {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    font-family: "Outfit", sans-serif;
+    @include main-font-1;
+    background-color: var(--primary-color-1);
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@media (width<=1800px){
+    :root{
+        --font-size-1:26px;
+        --font-size-2:24px;
+        --font-size-3:16px;
+        --font-size-4:14px;
+    }
+}
+
+@media (width<=1200px){
+    :root{
+        --font-size-1:24px;
+        --font-size-2:20px;
+        --font-size-3:14px;
+        --font-size-4:12px;
+    }
+}
+
+@media (width<=800px){
+    :root{
+        --font-size-1:22px;
+        --font-size-2:18px;
+        --font-size-3:12px;
+        --font-size-4:10px;
+    }
+}
+
+@media (width<=800px){
+    :root{
+        --font-size-1:22px;
+        --font-size-2:18px;
+        --font-size-3:10px;
+        --font-size-4:10px;
+    }
+}
+
