@@ -7,22 +7,22 @@ export async function chartRender(data, chart, storage) {
     let selectedCoin = 'BTC'; // Изначально выбранная криптовалюта
     chart.innerHTML = `
         <p class="main__name">Chart</p>
-        <div class="main__chart-menu">
-            <p class="main__chart-menu--left">
-                <select class="main__chart-coin-select">
+        <div class="chart__menu">
+            <p class="chart__menu--left">
+                <select class="chart__coin-select">
                     ${storage.map(coin => `<option value="${coin.id}">${data[coin.id].name}/${coin.id}</option>`).join('')}
                 </select>
-                <span class="main__chart-coin-price">$35,352.02</span>
+                <span class="chart__coin-price">$35,352.02</span>
             </p>
-            <div class="main__chart-menu--right">
-                <button id="chart-1h" class="main__chart-button">1h</button>
-                <button id="chart-3h" class="main__chart-button">3h</button>
-                <button id="chart-1d" class="main__chart-button">1d</button>
-                <button id="chart-1w" class="main__chart-button">1w</button>
-                <button id="chart-1m" class="main__chart-button">1m</button>
+            <div class="chart__menu--right">
+                <button id="chart-1h" class="chart__button">1h</button>
+                <button id="chart-3h" class="chart__button">3h</button>
+                <button id="chart-1d" class="chart__button">1d</button>
+                <button id="chart-1w" class="chart__button">1w</button>
+                <button id="chart-1m" class="chart__button">1m</button>
             </div>
         </div>
-        <div class="main__chart-graph">
+        <div class="chart__graph">
             <canvas id="priceChart"></canvas>
         </div>
     `;
@@ -41,7 +41,7 @@ export async function chartRender(data, chart, storage) {
                 }
 
                 let close = "$" + data.Data[data.Data.length - 1].CLOSE;
-                document.querySelector(".main__chart-coin-price").innerText = close.slice(0, 7);
+                document.querySelector(".chart__coin-price").innerText = close.slice(0, 7);
                 currentChart = graphRender(data, ctx);
 
             } else {
@@ -64,7 +64,7 @@ export async function chartRender(data, chart, storage) {
     document.getElementById('chart-1m').addEventListener('click', () => fetchData(getApiUrl('days',30)));
 
     // Обработчик изменения валюты
-    document.querySelector('.main__chart-coin-select').addEventListener('change', async (event) => {
+    document.querySelector('.chart__coin-select').addEventListener('change', async (event) => {
         selectedCoin = event.target.value;
         await fetchData(getApiUrl('minutes',60)); // Перезагрузить график при смене валюты
     });

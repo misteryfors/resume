@@ -13,13 +13,13 @@ export let storage = JSON.parse(localStorage.getItem("CryptoData")) || defaultDa
 async function render(){
 
     console.log(storage);
-    const slider = document.querySelector(".main__slider-list");
+    const slider = document.querySelector(".slider__list");
     await sliderRender(data,slider,storage);
 
-    const chart = document.querySelector(".main__chart");
+    const chart = document.querySelector(".chart");
     await chartRender(data,chart,storage)
 
-   const portfolio = document.querySelector(".main__portfolio")
+   const portfolio = document.querySelector(".portfolio")
    await portfolioRender(data,portfolio,storage)
 
     searchFunc(data);

@@ -5,6 +5,10 @@
     <link rel="stylesheet" href="src-crypto/style.css">
     <link rel="stylesheet" href="src-crypto/sidebar/sidebar.css">
     <link rel="stylesheet" href="src-crypto/content/content.css">
+    <link rel="stylesheet" href="src-crypto/content/main/slider/slider.css">
+    <link rel="stylesheet" href="src-crypto/content/main/chart/chart.css">
+    <link rel="stylesheet" href="src-crypto/content/main/portfolio/portfolio.css">
+    <link rel="stylesheet" href="src-crypto/content/main/live-market/live-market.css">
     <title>Title</title>
 </head>
 <body>
@@ -44,59 +48,59 @@
     </header>
     <main class="main">
         <div class="main__grid">
-            <div class="main__slider">
-                <button class="main__slider-left-button"></button>
-                <div class="main__slider-mask-gradient">
-                    <div class="main__slider-mask-gradient-overlay">
-                        <div class="main__slider-list">
-                            <div class="main__slider-list-item"></div>
-                            <div class="main__slider-list-item"></div>
-                            <div class="main__slider-list-item"></div>
-                            <div class="main__slider-list-item"></div>
-                            <div class="main__slider-list-item"></div>
+            <div class="main__slider slider">
+                <button class="slider__left-button"></button>
+                <div class="slider__mask-gradient">
+                    <div class="slider__mask-gradient-overlay">
+                        <div class="slider__list">
+                            <div class="slider__list-item"></div>
+                            <div class="slider__list-item"></div>
+                            <div class="slider__list-item"></div>
+                            <div class="slider__list-item"></div>
+                            <div class="slider__list-item"></div>
                         </div>
                     </div>
                 </div>
-                <button class="main__slider-right-button"></button>
+                <button class="slider__right-button"></button>
             </div>
-            <div class="main__portfolio">
+            <div class="main__portfolio portfolio">
                 <p class="main__name">My Portfolio</p>
-                <div class="main__portfolio-item">
-                    <button class="main__portfolio-item-button">
-                        <img class="main__portfolio-item-icon" src="src-crypto/public/bitcoin-(btc).svg">
+                <div class="portfolio__item">
+                    <button class="portfolio__item-button">
+                        <img class="portfolio__item-icon" src="src-crypto/public/bitcoin-(btc).svg">
                     </button>
-                    <div class="main__portfolio-item-text">
-                        <p class="main__portfolio-item-main">
-                            <span class="main__portfolio-item-main--name">Bitcoin</span>
-                            <span class="main__portfolio-item-main--price">$3,245.03</span>
+                    <div class="portfolio__item-text">
+                        <p class="portfolio__item-main">
+                            <span class="portfolio__item-main--name">Bitcoin</span>
+                            <span class="portfolio__item-main--price">$3,245.03</span>
                         </p>
-                        <p class="main__portfolio-item-support">
-                            <span class="main__portfolio-item-support--different-down">-6.00%</span>
-                            <span class="main__portfolio-item-support--price">0.12543 BTC</span>
+                        <p class="portfolio__item-support">
+                            <span class="portfolio__item-support--different-down">-6.00%</span>
+                            <span class="portfolio__item-support--price">0.12543 BTC</span>
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="main__chart">
+            <div class="main__chart chart">
 
             </div>
-            <div class="main__live-market">
+            <div class="main__live-market live-market">
                 <p class="main__name">Live Market</p>
-                <div class="main__live-market-grid">
-                    <p class="main__live-market-grid-item--atribute-name">Coin</p>
-                    <p class="main__live-market-grid-item--atribute-name">Change</p>
-                    <p class="main__live-market-grid-item--atribute-name">Martket Cap</p>
-                    <p class="main__live-market-grid-item--atribute-name">24h Volume</p>
-                    <p class="main__live-market-grid-item--atribute-name">Price</p>
+                <div class="live-market__grid">
+                    <p class="live-market__grid-item--atribute-name">Coin</p>
+                    <p class="live-market__grid-item--atribute-name">Change</p>
+                    <p class="live-market__grid-item--atribute-name">Martket Cap</p>
+                    <p class="live-market__grid-item--atribute-name">24h Volume</p>
+                    <p class="live-market__grid-item--atribute-name">Price</p>
 
-                    <p class="main__live-market-grid-item--coin-value">
-                        <img class="main__live-market-grid-item--coin-icon" src="src-crypto/public/bitcoin-(btc).svg">
-                        <span class="main__live-market-grid-item--coin-name">Bitcoin</span>
+                    <p class="live-market__grid-item--coin-value">
+                        <img class="live-market__grid-item--coin-icon" src="src-crypto/public/bitcoin-(btc).svg">
+                        <span class="live-market__grid-item--coin-name">Bitcoin</span>
                     </p>
-                    <p class="main__live-market-grid-item--change-value">+12.00%</p>
-                    <p class="main__live-market-grid-item--standard-value">$3.560M</p>
-                    <p class="main__live-market-grid-item--standard-value">$65.20M</p>
-                    <p class="main__live-market-grid-item--standard-value">$48.032,32</p>
+                    <p class="live-market__grid-item--change-value">+12.00%</p>
+                    <p class="live-market__grid-item--standard-value">$3.560M</p>
+                    <p class="live-market__grid-item--standard-value">$65.20M</p>
+                    <p class="live-market__grid-item--standard-value">$48.032,32</p>
                 </div>
             </div>
         </div>

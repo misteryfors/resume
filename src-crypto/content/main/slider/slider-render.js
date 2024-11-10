@@ -6,8 +6,8 @@ import { graphRender } from "./slider-graph-render.js";
 
 export async function sliderRender(data,slider,storage) {
     console.log(data);
-    const leftButton= document.querySelector('.main__slider-left-button');
-    const rightButton= document.querySelector('.main__slider-right-button');
+    const leftButton= document.querySelector('.slider__left-button');
+    const rightButton= document.querySelector('.slider__right-button');
 
 
     let itemSizes = [];
@@ -16,20 +16,20 @@ export async function sliderRender(data,slider,storage) {
     rightButton.disabled = false;
     // Генерация HTML для слайдера, включая иконки, названия и графики
     slider.innerHTML = storage.map(coin => `
-        <div class="main__slider-list-item">
-            <img class="main__slider-item-icon" src="${data[coin.id].image}">
-            <p class="main__slider-item-name">
-                <span class="main__slider-item-name--full">${data[coin.id].name}</span>
-                <span class="main__slider-item-name--short">${coin.id}</span>
+        <div class="slider__list-item">
+            <img class="slider__item-icon" src="${data[coin.id].image}">
+            <p class="slider__item-name">
+                <span class="slider__item-name--full">${data[coin.id].name}</span>
+                <span class="slider__item-name--short">${coin.id}</span>
             </p>
-            <div class="main__slider-item-arrow-block">
-                <img class="main__slider-item-arrow" id="${coin.id}-arrow" src="src-crypto/public/price-arrow-up.svg">
+            <div class="slider__item-arrow-block">
+                <img class="slider__item-arrow" id="${coin.id}-arrow" src="src-crypto/public/price-arrow-up.svg">
             </div>
-            <p class="main__slider-item-price">
-                <span class="main__slider-item-price--current" id="${coin.id}-price"></span>
-                <span class="main__slider-item-price--different-up" id="${coin.id}-change"></span>
+            <p class="slider__item-price">
+                <span class="slider__item-price--current" id="${coin.id}-price"></span>
+                <span class="slider__item-price--different-up" id="${coin.id}-change"></span>
             </p>
-            <div class="main__slider-item-graph">
+            <div class="slider__item-graph">
                 <canvas id="${coin.id}-graph"></canvas>
             </div>
         </div>
@@ -71,12 +71,12 @@ export async function sliderRender(data,slider,storage) {
 
                 if (priceChange<0)
                 {
-                    change.className="main__slider-item-price--different-down";
+                    change.className="slider__item-price--different-down";
                     arrow.src="src-crypto/public/price-arrow-down.svg";
                 }
                 else
                 {
-                    change.className="main__slider-item-price--different-up";
+                    change.className="slider__item-price--different-up";
                     arrow.src="src-crypto/public/price-arrow-up.svg";
                 }
 

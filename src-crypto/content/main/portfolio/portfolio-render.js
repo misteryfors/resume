@@ -7,28 +7,28 @@ export async function portfolioRender(data, portfolio, storage) {
     portfolio.innerHTML = `
         <p class="main__name">My Portfolio</p>
             ${storage.map(coin =>
-        `<div class="main__portfolio-item" data-coin-id="${coin.id}">
-                <button class="main__portfolio-item-button">
-                    <img class="main__portfolio-item-icon" src="${data[coin.id].image}">
+        `<div class="portfolio__item" data-coin-id="${coin.id}">
+                <button class="portfolio__item-button">
+                    <img class="portfolio__item-icon" src="${data[coin.id].image}">
                 </button>
-                <div class="main__portfolio-item-text">
-                    <p class="main__portfolio-item-main">
-                        <span class="main__portfolio-item-main--name">${data[coin.id].name}</span>
-                        <span class="main__portfolio-item-main--price">$${(price.Data[coin.id+"-USD"].VALUE*coin.count).toPrecision(7)}</span>
+                <div class="portfolio__item-text">
+                    <p class="portfolio__item-main">
+                        <span class="portfolio__item-main--name">${data[coin.id].name}</span>
+                        <span class="portfolio__item-main--price">$${(price.Data[coin.id+"-USD"].VALUE*coin.count).toPrecision(7)}</span>
                     </p>
-                    <p class="main__portfolio-item-support">
-                        <span class="main__portfolio-item-support--different-down">${price.Data[coin.id+"-USD"].CURRENT_DAY_CHANGE_PERCENTAGE.toFixed(2)}</span>
-                        <span class="main__portfolio-item-support--price">${coin.count +" "+ coin.id}</span>
+                    <p class="portfolio__item-support">
+                        <span class="portfolio__item-support--different-down">${price.Data[coin.id+"-USD"].CURRENT_DAY_CHANGE_PERCENTAGE.toFixed(2)}</span>
+                        <span class="portfolio__item-support--price">${coin.count +" "+ coin.id}</span>
                     </p>
                 </div>
             </div>`).join("")}
     `;
 
     // Добавляем обработчики событий на кнопки удаления
-    const deleteButtons = document.querySelectorAll(".main__portfolio-item-button");
+    const deleteButtons = document.querySelectorAll(".portfolio__item-button");
     deleteButtons.forEach(button => {
         button.addEventListener("click", () => {
-            const coinElement = button.closest(".main__portfolio-item");
+            const coinElement = button.closest(".portfolio__item");
             const coinId = coinElement.getAttribute("data-coin-id");
             console.log(`Удалён coin: ${coinId}`);
             const updatedStorage = storage.filter(item => item.id !== coinId);
