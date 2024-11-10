@@ -58,47 +58,58 @@ weatherDetails2(weatherData.hours);
 
 let isScrolling = false; // Флаг для временной блокировки
 
-function scrollLeft() {
-    if (!leftButton.disabled && !isScrolling) {
-        isScrolling = true; // Устанавливаем временную блокировку
-        if (listContainer.scrollLeft - itemSizes[currentItemIndex] <= 10) {
-            leftButton.disabled = true; // Полностью отключаем кнопку при достижении конца
-        } else {
-            rightButton.disabled = false; // Включаем кнопку вправо, если не достигли конца
+    function smoothScroll(container, targetScrollLeft, duration = 500, onComplete) {
+        const startScrollLeft = container.scrollLeft;
+        const distance = targetScrollLeft - startScrollLeft;
+        let startTime = null;
+
+        function scrollStep(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const progress = timestamp - startTime;
+            const percent = Math.min(progress / duration, 1);
+            container.scrollLeft = startScrollLeft + distance * percent;
+
+            if (progress < duration) {
+                requestAnimationFrame(scrollStep);
+            } else if (onComplete) {
+                onComplete(); // Выполнить функцию после завершения прокрутки
+            }
         }
 
-        if (currentItemIndex > 0) {
-            currentItemIndex--;
-            listContainer.scrollLeft -= itemSizes[currentItemIndex];
-        }
-
-        // Задержка перед повторным включением возможности прокрутки
-        setTimeout(() => {
-            isScrolling = false; // Разрешаем повторное нажатие через 300 мс
-        }, 300);
+        requestAnimationFrame(scrollStep);
     }
-}
 
-function scrollRight() {
-    if (!rightButton.disabled && !isScrolling) {
-        isScrolling = true; // Устанавливаем временную блокировку
-        if (listContainer.scrollLeft + itemSizes[currentItemIndex] >= listContainer.scrollWidth - listContainer.clientWidth - 10) {
-            rightButton.disabled = true; // Полностью отключаем кнопку при достижении конца
-        } else {
-            leftButton.disabled = false; // Включаем кнопку влево, если не достигли начала
+    function scrollLeft() {
+        if (!leftButton.disabled) {
+            if (currentItemIndex > 0) {
+                currentItemIndex--;
+                const newScrollLeft = listContainer.scrollLeft - itemSizes[currentItemIndex];
+                smoothScroll(listContainer, newScrollLeft, 500, () => {
+                    // Проверка позиции для точного отключения кнопок
+                    rightButton.disabled = false;
+                    leftButton.disabled = listContainer.scrollLeft <= itemSizes[0] / 2;
+                });
+            }
         }
-
-        if (currentItemIndex < itemSizes.length - 1) {
-            listContainer.scrollLeft += itemSizes[currentItemIndex];
-            currentItemIndex++;
-        }
-
-        // Задержка перед повторным включением возможности прокрутки
-        setTimeout(() => {
-            isScrolling = false; // Разрешаем повторное нажатие через 300 мс
-        }, 300);
     }
-}
+
+    function scrollRight() {
+        if (!rightButton.disabled) {
+            if (currentItemIndex < itemSizes.length - 1) {
+                const newScrollLeft = listContainer.scrollLeft + itemSizes[currentItemIndex];
+                currentItemIndex++;
+                smoothScroll(listContainer, newScrollLeft, 500, () => {
+                    // Проверка позиции для точного отключения кнопок
+                    leftButton.disabled = false;
+                    const nearEndPosition = listContainer.scrollWidth - listContainer.clientWidth - itemSizes[itemSizes.length - 1] / 2;
+                    rightButton.disabled = listContainer.scrollLeft >= nearEndPosition;
+                });
+            }
+        }
+    }
+
+
+
 
 leftButton.addEventListener('click', scrollLeft);
 rightButton.addEventListener('click', scrollRight);

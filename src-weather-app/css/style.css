@@ -403,7 +403,7 @@ body {
     background: rgba(245, 244, 244, 0.4);
     border: none;
     box-sizing: border-box;
-    background: url("../public/img/chevron.svg");
+    background: url("../../src-crypto/public/chevron.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-color: rgba(245, 244, 244, 0.4);
@@ -432,9 +432,8 @@ body {
     height: 100%;
     gap: 0px;
     mask-image: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #000000  3.64%, #000000  96.36%, rgba(0, 0, 0, 0) 100%);
-
-
 }
+
 .switch__mask-gradient-overlay{
     width: 100%;
     height: 100%;
@@ -452,7 +451,7 @@ body {
     grid-template-rows: 1fr; /* Одна строка */
     grid-auto-columns: min-content; /* Колонки подстраиваются под контент */
     overflow-x: hidden;
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
     /*mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);*/
 
 }
@@ -579,7 +578,7 @@ body {
     }
 
     .list{
-        gap: 12px;
+
     }
 
     .footer{
@@ -708,7 +707,7 @@ body {
     }
 
     .list{
-        gap: 8px;
+
     }
 
     .list__slider-item {

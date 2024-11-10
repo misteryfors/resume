@@ -4,54 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/style.css">
-    <link rel="stylesheet" href="src/header/header.css">
-    <link rel="stylesheet" href="src/main/main.css">
+    <link rel="stylesheet" href="src/content/header/header.css">
+    <link rel="stylesheet" href="src/content/content.css">
     <title>Resume</title>
 </head>
 <body>
-       
-    <main class="main">
-        <header class="header">
-        <nav class="nav-block">
-            <a class="nav-block__button"><img class="nav-block__img" src="src/public/Vector.svg" alt=""></a>
-            <a class="nav-block__button"><img class="nav-block__img" src="src/public/Vector-2.svg" alt=""></a>
-            <a class="nav-block__button"><img class="nav-block__img" src="src/public/Vector-1.svg" alt=""></a>
-        
-        <div class="nav-block__hiding-button-block">
-            <button class="nav-block__button hiding" id="toggle-header">
-                <img class="nav-block__img" src="src/public/Icon-1 copy.svg" alt="">
-            </button>
-        </div>
-        </nav>
-    </header> 
+    <div class="content">
+        <h1 class="content__title">Резюме на должность Front-end разработчик</h1>         
         <aside class="sidebar">
             <section class="header-section">
-                    <p class="header-section__name">Info</p>
+                    <h2 class="header-section__name">Info</h2>
             </section>
             <section class="main-section">
-                <section class="sidebar__section">
-                    <div class="sidebar__toggle">Contacts</div>
+                <section class="sidebar__section open">
+                    <h3 class="sidebar__toggle">Contacts</h3>
                     <ul class="sidebar__list">
-                        <!-- Динамически сгенерированный блок кода -->
+                        <!-- Динамически сгенерированный блок кода в src/content/main/sidebar/sidebar.js-->
                     </ul>
                 </section>
-                <section class="sidebar__section">
-                    <div class="sidebar__toggle">Social</div>
+                <section class="sidebar__section open">
+                    <h3 class="sidebar__toggle">Social</h3>
                     <ul class="sidebar__list">
-                        <!-- Динамически сгенерированный блок кода -->
+                        <!-- Динамически сгенерированный блок кода в src/content/main/sidebar/sidebar.js -->
                     </ul>
                 </section>
-                <section class="sidebar__section">
-                    <div class="sidebar__toggle">Languages</div>
+                <section class="sidebar__section open">
+                    <h3 class="sidebar__toggle">Languages</h3>
                     <ul class="sidebar__list">
-                        <!-- Динамически сгенерированный блок кода -->
+                        <!-- Динамически сгенерированный блок кода в src/content/main/sidebar/sidebar.js -->
                     </ul>
                 </section>
             </section>
         </aside>
-        <div class="content">
+        <main class="main">
             <section class="header-section">
-                <p class="header-section__name">Skills and experience</p>
+                <h2 class="header-section__name">Skills and experience</h2>
             </section>
             <section class="main-section">
                 <ul class="content__list">
@@ -62,9 +49,9 @@
                                 <div class="chapter__divider"></div>
                             </div>
                             <section class="chapter__details">
-                                <p class="chapter__name">Briefly about me</p>
+                                <h3 class="chapter__name">Briefly about me</h3>
                                 <div class="code-block" contenteditable="true">
-                                    <!-- Динамически сгенерированный блок кода -->
+                                    <!-- Динамически сгенерированный блок кода в src/content/main/code-block/code-generator.js -->
                                 </div>
                             </section>
                         </article>
@@ -76,9 +63,9 @@
                                 <div class="chapter__divider"></div>
                             </div>
                             <section class="chapter__details">
-                                <h2 class="chapter__name">Latest projects</h2>
+                                <h3 class="chapter__name">Latest projects</h3>
                                 <ul class="chapter__chapter-grid chapter-grid--many-lines" id="ContentProject">
-                                    <!-- Динамически сгенерированный блок кода -->
+                                    <!-- Динамически сгенерированный блок кода в src/content/main/project-list.js -->
                                 </ul>
                             </section>
                         </article>
@@ -90,7 +77,7 @@
                                 <div class="chapter__divider"></div>
                             </div>
                             <section class="chapter__details">
-                                <h2 class="chapter__name">Main skills</h2>
+                                <h3 class="chapter__name">Main skills</h3>
                                 <ul class="chapter__chapter-grid chapter-grid--one-line">
                                     <li class="chapter-grid__item">                                       
                                         <section class="chapter-grid__section--solo">
@@ -99,9 +86,9 @@
                                     </li>
                                     <li class="chapter-grid__item">
                                         <section class="chapter-grid__section--list">
-                                            <li class="chapter-grid__section-text">Chakra UI</li>
-                                            <li class="chapter-grid__section-text">Emotion</li>
-                                            <li class="chapter-grid__section-text">Framer</li>
+                                            <p class="chapter-grid__section-text">Chakra UI</p>
+                                            <p class="chapter-grid__section-text">Emotion</p>
+                                            <p class="chapter-grid__section-text">Framer</p>
                                         </section>                              
                                     </li>
                                     <li class="chapter-grid__item">
@@ -129,7 +116,7 @@
                                 <div class="chapter__divider"></div>
                             </div>
                             <section class="chapter__details">
-                                <h2 class="chapter__name">Main tools</h2>
+                                <h3 class="chapter__name">Main tools</h3>
                                 <ul class="chapter__chapter-grid chapter-grid--one-line">
                                     <li class="chapter-grid__item">
                                         <section class="chapter-grid__section--two-vertical">
@@ -162,24 +149,26 @@
             
 
         </section>
-        </div>
+        </main>
         <section class="secondary-section">
             <section class="header-section">
-                <p class="header-section__name">Current project</p>
+                <h2 class="header-section__name">Current project</h2>
             </section>
             <section class="main-section">
                 <ul class="chapter__list" id="CurrentProjects">
-                    <!-- Динамически сгенерированный блок кода -->
+                    <!-- Динамически сгенерированный блок кода в src/content/main/project-list.js -->
                 </ul>
             </section>
         </section>
-    </main>
+
     <footer class="footer">
         <!-- Footer content -->
     </footer>
+    </div>  
+    
     <!-- Подключение внешнего скрипта -->
-    <script src="./src/main/sidebar/sidebar.js"></script>
-    <script src="./src/main/content/code-block/code-generation.js"></script>
-    <script src="./src/main/content/project-list.js"></script>
+    <script src="./src/content/sidebar/sidebar.js"></script>
+    <script src="./src/content/main/code-block/code-generation.js"></script>
+    <script src="./src/content/main/project-list.js"></script>
 </body>
 </html>

@@ -1,0 +1,103 @@
+@charset "UTF-8";
+.sidebar__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-4);
+}
+.sidebar__name {
+  font-size: var(--font-size-4);
+  font-weight: 400;
+  color: var(--secondary-color-4);
+}
+.sidebar__section {
+  margin-top: 16px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0s ease;
+}
+.sidebar__section:first-child {
+  margin-top: 0px;
+}
+.sidebar__section:not(:last-child):after {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  content: "";
+  display: block;
+  margin-top: 16px;
+}
+.sidebar__social {
+  margin-top: 16px;
+  gap: var(--gap-3);
+}
+.sidebar__toggle {
+  position: relative;
+  padding: 0 0 16px 48px; /* Оставляем место для стрелки */
+  font-size: var(--font-size-2);
+  font-weight: 400;
+  color: var(--secondary-color-3);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.sidebar__toggle:hover {
+  color: var(--secondary-color-4);
+}
+.sidebar__toggle::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 30%;
+  transform: translateY(-50%) rotate(-45deg);
+  border: solid oklab(0.686679 -0.00398019 -0.0150182);
+  border-radius: 10%;
+  border-width: 0 4px 4px 0;
+  padding: 6px;
+}
+.sidebar__toggle:hover::before {
+  border-color: var(--secondary-color-4);
+}
+.sidebar__section.open .sidebar__toggle::before {
+  top: 30%;
+  transform: translateY(-50%) rotate(45deg); /* Поворот стрелки при открытии */
+}
+.sidebar__section.open .sidebar__list {
+  max-height: 500px; /* Задаем высоту раскрытого списка */
+}
+.sidebar__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-3);
+  list-style: none;
+  padding: 0 0 0 2px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0s ease;
+}
+.sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-3);
+}
+.sidebar__link:hover {
+  border-radius: 25%;
+  filter: drop-shadow(3px 1px 4px var(--shadow-color-1));
+}
+.sidebar__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  box-sizing: content-box;
+  transition: border-radius 0.5s ease;
+}
+.sidebar__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-4);
+  font-family: "DM Sans", sans-serif;
+}
+.sidebar__details {
+  font-size: var(--font-size-3);
+  font-weight: 400;
+  color: var(--secondary-color-4);
+}/*# sourceMappingURL=sidebar.css.map */

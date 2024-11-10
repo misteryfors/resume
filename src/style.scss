@@ -7,6 +7,8 @@
     --primary-color-1:#111214;
     --primary-color-2:#2c2d31;
     --primary-color-3:#323338;
+    --primary-color-4:#c0c5c8;
+
 
     --secondary-color-1:#393a3f;
     --secondary-color-2:#1e1e1e;
@@ -22,7 +24,12 @@
     --font-size-3:18px;
     --font-size-4:16px;
 
-    --code-font-size:16px
+    --code-font-size:16px;
+
+    --gap-1:32px;
+    --gap-2:24px;
+    --gap-3:16px;
+    --gap-4:8px;
 
 }
 
@@ -56,6 +63,22 @@ body {
         --font-size-2:20px;
         --font-size-3:14px;
         --font-size-4:12px;
+
+
+    }
+}
+
+@media (width<=1000px){
+    :root{
+        --font-size-1:22px;
+        --font-size-2:18px;
+        --font-size-3:12px;
+        --font-size-4:10px;
+
+        --gap-1:16px;
+        --gap-2:12px;
+        --gap-3:8px;
+        --gap-4:4px;
     }
 }
 

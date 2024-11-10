@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="src-crypto/style.css">
+    <link rel="stylesheet" href="src-crypto/sidebar/sidebar.css">
+    <link rel="stylesheet" href="src-crypto/content/content.css">
+    <title>Title</title>
+</head>
+<body>
+<aside class="sidebar">
+    <div class="sidebar__logo"><img src="src-crypto/public/Logo.svg">Logoipsm</div>
+    <nav class="sidebar__nav-block">
+        <a class="sidebar__link"><img class="sidebar__icon" src="src-crypto/public/element-3.svg">Overview</a>
+        <a class="sidebar__link"><img class="sidebar__icon" src="src-crypto/public/graph.svg">Chart</a>
+        <a class="sidebar__link"><img class="sidebar__icon" src="src-crypto/public/wallet-2.svg">Transactions</a>
+        <a class="sidebar__link"><img class="sidebar__icon" src="src-crypto/public/wallet-minus.svg">Wallet</a>
+        <a class="sidebar__link"><img class="sidebar__icon" src="src-crypto/public/message-text.svg">News</a>
+        <a class="sidebar__link"><img class="sidebar__icon" src="src-crypto/public/sms.svg">Mail Box</a>
+    </nav>
+    <div class="sidebar__buttons-block">
+        <button class="sidebar__button"><img class="sidebar__icon" src="src-crypto/public/setting-2.svg">Setting</button>
+        <button class="sidebar__button"><img class="sidebar__icon" src="src-crypto/public/logout.svg">Logout</button>
+    </div>
+</aside>
+<div class="content">
+    <header class="header">
+        <p class="header__tag">Dashboard</p>
+        <search class="header__search">
+            <input class="header__input" placeholder="Search...">
+            <img class="header__search-img" src="src-crypto/public/search-normal.svg">
+            <div class="header__results"></div>
+        </search>
+        <div class="header__buttons-block">
+            <button class="header__notifications">
+                <img class="header__account-arrow" src="src-crypto/public/Notification.svg">
+            </button>
+            <button class="header__account-button">
+                <img class="header__account-img">
+                <p class="header__account-name">Courtney Henry</p>
+                <img class="header__account-arrow" src="src-crypto/public/arrow-down.svg">
+            </button>
+        </div>
+    </header>
+    <main class="main">
+        <div class="main__grid">
+            <div class="main__slider">
+                <button class="main__slider-left-button"></button>
+                <div class="main__slider-mask-gradient">
+                    <div class="main__slider-mask-gradient-overlay">
+                        <div class="main__slider-list">
+                            <div class="main__slider-list-item"></div>
+                            <div class="main__slider-list-item"></div>
+                            <div class="main__slider-list-item"></div>
+                            <div class="main__slider-list-item"></div>
+                            <div class="main__slider-list-item"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="main__slider-right-button"></button>
+            </div>
+            <div class="main__portfolio">
+                <p class="main__name">My Portfolio</p>
+                <div class="main__portfolio-item">
+                    <button class="main__portfolio-item-button">
+                        <img class="main__portfolio-item-icon" src="src-crypto/public/bitcoin-(btc).svg">
+                    </button>
+                    <div class="main__portfolio-item-text">
+                        <p class="main__portfolio-item-main">
+                            <span class="main__portfolio-item-main--name">Bitcoin</span>
+                            <span class="main__portfolio-item-main--price">$3,245.03</span>
+                        </p>
+                        <p class="main__portfolio-item-support">
+                            <span class="main__portfolio-item-support--different-down">-6.00%</span>
+                            <span class="main__portfolio-item-support--price">0.12543 BTC</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="main__chart">
+
+            </div>
+            <div class="main__live-market">
+                <p class="main__name">Live Market</p>
+                <div class="main__live-market-grid">
+                    <p class="main__live-market-grid-item--atribute-name">Coin</p>
+                    <p class="main__live-market-grid-item--atribute-name">Change</p>
+                    <p class="main__live-market-grid-item--atribute-name">Martket Cap</p>
+                    <p class="main__live-market-grid-item--atribute-name">24h Volume</p>
+                    <p class="main__live-market-grid-item--atribute-name">Price</p>
+
+                    <p class="main__live-market-grid-item--coin-value">
+                        <img class="main__live-market-grid-item--coin-icon" src="src-crypto/public/bitcoin-(btc).svg">
+                        <span class="main__live-market-grid-item--coin-name">Bitcoin</span>
+                    </p>
+                    <p class="main__live-market-grid-item--change-value">+12.00%</p>
+                    <p class="main__live-market-grid-item--standard-value">$3.560M</p>
+                    <p class="main__live-market-grid-item--standard-value">$65.20M</p>
+                    <p class="main__live-market-grid-item--standard-value">$48.032,32</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script type="module" src="src-crypto/render.js">
+
+</script>
+
+
+
+</body>
+</html>

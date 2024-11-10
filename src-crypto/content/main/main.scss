@@ -1,0 +1,368 @@
+@import "../../mixins/fonts-mixin.scss";
+
+@mixin block($width,$height,$border-radius,$background,$padding){
+  width: $width;
+  height: $height;
+  border-radius: $border-radius;
+  background: $background;
+  display: flex;
+  flex-direction: column;
+  padding: $padding;
+}
+
+
+.main{
+  padding: 40px 32px 28px 30px;
+  box-sizing: border-box;
+
+  &__grid{
+    display: grid;
+    grid-template-rows: 178px 180px 230px 173px;
+    grid-auto-columns: 355px 739px;
+    gap: 32px 30px;
+  }
+
+  &__slider{
+    grid-row: span 1;
+    grid-column: span 2;
+    width: 100%;
+    gap: var(--gap-2);
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  &__slider-left-button,
+  &__slider-right-button{
+    position: absolute;
+    right: 0;
+    flex-grow: 0;
+    width: 56px;
+    height: 48px;
+    padding: 12px 16px 12px 16px;
+    gap: 10px;
+    border-radius: var(--border-radius-2);
+    border: none;
+    box-sizing: border-box;
+    background: url("../../public/chevron.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    //background-color: rgba(245, 244, 244, 0.4);
+    z-index: 10;
+  }
+
+  &__slider-left-button:hover:not(:disabled),
+  &__slider-right-button:hover:not(:disabled){
+    background-color: rgba(218, 218, 218, 1);
+  }
+
+  &__slider-left-button:disabled,
+  &__slider-right-button:disabled{
+    opacity: 0.5;
+  }
+
+  &__slider-left-button{
+    left: 0px;
+    transform: rotate(180deg);
+  }
+
+  &__slider-list{
+    display: grid;
+    grid-auto-flow: column; /* Элементы располагаются в одной строке */
+    overflow-x: hidden;
+    overflow-y: hidden;
+    scroll-behavior: auto;
+    grid-template-rows: 178px;
+    gap: var(--gap-30);
+    grid-template-columns: repeat(4,258px);
+  }
+
+  &__slider-mask-gradient{
+    width: fit-content;
+    width: 50%;
+    flex-grow: 1;
+    height: 100%;
+    gap: 0px;
+    mask-image: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #000000  3.64%, #000000  96.36%, rgba(0, 0, 0, 0) 100%);
+  }
+
+  &__slider-mask-gradient-overlay{
+    width: 100%;
+    height: 100%;
+    left: 88px;
+    gap: 0px;
+  }
+
+  &__slider-list-item{
+    @include block(100%,100%,var(--border-radius-1),var(--primary-color-2),23px 18px 24px 19px);
+    display: grid;
+    gap: var(--gap-20);
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 44px 27px 59px 32px;
+  }
+
+  &__slider-item-icon{
+    grid-column: span 1;
+    @include block(44px,44px,var(--border-radius-1),var(--primary-color-1),10px);
+  }
+
+  &__slider-item-name{
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-6);
+
+    &--full{
+      @include font-16-semi-bold;
+    }
+
+    &--short{
+      @include font-12-normal;
+    }
+
+  }
+
+  &__slider-item-arrow-block{
+    grid-column: span 1;
+    grid-row: span 1;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+  }
+
+  &__slider-item-arrow{
+
+  }
+
+  &__slider-item-price{
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-12);
+
+    &--current{
+      @include font-21-semi-bold;
+    }
+
+    &--different-up{
+      @include font-14-semi-bold;
+      color: var(--font-color-4);
+    }
+    &--different-down{
+      @include font-14-semi-bold;
+      color: var(--font-color-5);
+    }
+
+  }
+
+  &__slider-item-graph{
+    grid-column: span 2;
+
+  }
+
+  &__portfolio{
+    @include block(100%,100%,var(--border-radius-1),var(--primary-color-2),30px 30px 32px 30px);
+    grid-row: span 3;
+    gap: var(--gap-24);
+    overflow-y: auto;
+
+    &::-webkit-scrollbar{
+      width: 4px;
+      background: var(--primary-color-3);
+      color: var(--primary-color-2);
+    }
+
+    &::-webkit-scrollbar-thumb{
+      color: var(--primary-color-2);
+      background: var(--primary-color-4);
+    }
+  }
+
+  &__portfolio-item{
+    display: flex;
+    gap: var(--gap-16);
+  }
+
+  &__portfolio-item-icon{
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+
+  &__portfolio-item-button{
+    @include block(44px,44px,var(--border-radius-1),var(--primary-color-1),10px);
+    border: none;
+    min-width: 44px;
+    min-height: 44px;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 0, 0, 0.3); // цвет наложения
+      opacity: 0; // начальная прозрачность, чтобы не отображался
+      transition: opacity 0.3s ease; // плавный переход
+      background-image: url("../../public/delete-bin-2-line.svg");
+    }
+
+    // Эффект при наведении
+    &:hover::after {
+      opacity: 1; // показывает наложение при наведении
+    }
+  }
+
+  &__portfolio-item-text{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: var(--gap-16);
+  }
+
+  &__portfolio-item-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &--name{
+      @include font-16-medium;
+    }
+    &--price{
+      @include font-14-normal;
+    }
+  }
+
+  &__portfolio-item-support{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+
+    &--different-up{
+      @include font-12-medium;
+      color: var(--font-color-4);
+    }
+    &--different-down{
+      @include font-12-medium;
+      color: var(--font-color-5);
+    }
+    &--price{
+      @include font-14-semi-bold;
+    }
+  }
+
+  &__chart{
+    @include block(100%,100%,var(--border-radius-1),var(--primary-color-2),30px 24px 28px 30px);
+    grid-row: span 2;
+    gap: var(--gap-24);
+  }
+
+  &__chart-header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  &__chart-menu{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--left{
+      display: flex;
+      flex-direction: column;
+    }
+    &--right{
+      display: flex;
+      flex-direction: row;
+      gap: var(--gap-10);
+    }
+  }
+
+  &__chart-coin-select{
+    @include font-14-normal;
+    background: none;
+  }
+  &__chart-coin-price{
+    @include font-18-medium;
+  }
+
+  &__chart-button{
+    @include block(100%,100%,var(--border-radius-1),var(--primary-color-2),0px 15px 0px 15px);
+    border: 1px solid #31353F;
+    @include font-10-medium;
+    line-height: 22px;
+
+    &:hover{
+    background: var(--primary-color-3);
+    }
+  }
+
+  &__chart-graph{
+
+  }
+
+  &__live-market{
+    @include block(100%,100%,var(--border-radius-1),var(--primary-color-2),30px 24px 25px 30px);
+    gap: var(--gap-20);
+  }
+
+  &__live-market-grid{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: var(--gap-12) 0;
+  }
+
+  &__live-market-grid-item{
+
+    &--atribute-name{
+      @include font-12-normal;
+    }
+    &--standard-value{
+      @include font-14-normal;
+    }
+    &--change-value{
+      @include font-14-medium;
+      color: var(--font-color-4);
+    }
+    &--coin-value{
+      @include font-14-medium;
+      gap: var(--gap-10);
+      display: flex;
+      align-items: center;
+    }
+    &--coin-icon{
+      width: 32px;
+      height: 32px;
+    }
+    &--coin-name{
+
+    }
+  }
+
+  &__live-market-grid-change{
+
+  }
+
+  &__live-market-grid-name{
+
+  }
+
+  &__live-market-grid-icon{
+
+  }
+
+  &__name{
+    @include font-21-semi-bold;
+  }
+}
