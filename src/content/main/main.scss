@@ -13,10 +13,11 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    gap: var(--gap-2);;   
+
+
 
     &__step {
-        width: 24px;
+        width: var(--gap-24);
         position: relative;
         min-height: 15vh;
         display: flex;
@@ -27,9 +28,9 @@
     &__circle {
         z-index: 1;
         position: absolute;
-        top: 25px;
-        width: 24px;
-        height: 24px;
+        top: var(--gap-16);
+        width: var(--gap-24);
+        height: var(--gap-24);
         border-radius: 50%;
         background-color: var(--secondary-color-1);
         position: relative; // Чтобы позиционировать псевдоэлемент относительно родителя
@@ -61,7 +62,7 @@
        
     &__divider {
         position: absolute;
-        top: 25px;
+        top: var(--gap-16);
         width: 3px;
         height: 100%;
         border-radius: 1px;
@@ -75,19 +76,21 @@
         display: flex;
         flex-direction: column;
         width: 90%;
-        padding: 20px;
+        padding: var(--gap-16);
         flex-grow: 1;
-        gap: var(--gap-3);;
+        gap: var(--gap-16);
+        margin: 0 0 150px 0;
     }
 
+
     &__name{
-        @include main-font-2;
+        @include font-24-normal;
 
     }
 
     &__description{
         white-space: pre-wrap; /* Чтобы переносы строк сохранялись */
-        @include main-font-4;
+        @include font-16-normal;;
         line-height: 1.5;
         letter-spacing: 0.5px;
         position: relative;
@@ -106,7 +109,7 @@
         list-style: none;
         display: flex;
         flex-direction: column;
-        gap: var(--gap-3);;
+        gap: var(--gap-16);;
         justify-content: space-between;
         
     }
@@ -128,7 +131,7 @@
     &--many-lines{
         grid-template-rows: auto;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: var(--gap-2);
+        gap: var(--gap-24);
         justify-content: space-between;
     }
 
@@ -177,7 +180,7 @@
             align-items: center;
             text-align: center;    
             padding: 8px;
-            @include main-font-3;      
+            @include font-18-normal;
         }
 
         &--solo{
@@ -251,7 +254,7 @@
         pointer-events: none; // Отключение взаимодействия
         width: 100%;
         height: 120px; // Фиксированная высота для изображения
-        @include main-font-3;
+        @include font-18-normal;
         padding: 8px;
         display: flex;
         justify-content: space-between;
@@ -259,7 +262,7 @@
 
     &__badges {
         display: flex; /* Используйте flex для расположения значков */
-        gap: var(--gap-4);; /* Отступы между значками */
+        gap: var(--gap-8);; /* Отступы между значками */
         z-index: 2; /* Обеспечьте, чтобы значки были поверх описания */
     }
 
@@ -272,10 +275,10 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between; // Измените на space-between, чтобы разместить текст и ссылки по разным концам
-        gap: var(--gap-4);; // Уменьшите промежутки для большего контроля
+        gap: var(--gap-8);; // Уменьшите промежутки для большего контроля
         padding: 20px;
         transition: height 1.0s ease;
-        @include main-font-4;// Плавный переход
+        @include font-16-normal;;// Плавный переход
         flex-grow: 1; // Используйте flex-grow для заполнения оставшегося пространства
         overflow: hidden; // Скрыть переполнение
         z-index: 1;
@@ -323,6 +326,6 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        @include main-font-3;
+        @include font-18-normal;
     }
 }

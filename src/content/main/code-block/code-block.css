@@ -16,7 +16,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   overflow: auto;
   max-height: 80vh;
-  font-size: 16px;
+  font-size: var(--code-font-size);
   /* Стили для скроллбара WebKit-браузеров (Chrome, Safari, Edge) */
   /* Для поддержки плавного скрытия скроллбара на мобильных устройствах */
 }
@@ -30,7 +30,6 @@
 .code-block::-webkit-scrollbar-thumb {
   background-color: transparent; /* Прозрачный, почти невидимый */
   border-radius: 10px;
-  -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease; /* Плавное появление */
 }
 .code-block:hover::-webkit-scrollbar-thumb {
@@ -75,4 +74,6 @@
   .code-block__indent-1, .code-block__indent-2, .code-block__indent-3 {
     padding-left: 16px;
   }
-}/*# sourceMappingURL=code-block.css.map */
+}
+
+/*# sourceMappingURL=code-block.css.map */

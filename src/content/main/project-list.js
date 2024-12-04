@@ -1,24 +1,14 @@
 const badgesData = [{id:1, img:"CSS.svg"},{id:2, img:"Angular.svg"},{id:3,img:"Flutter.svg"},{id:4,img:"HTML.svg"},{id:5,img:"React.svg"},{id:6,img:"Variant5.svg"},{id:7,img:"Vue.svg"},{id:8,img:"Javascript.svg"}];
 const projectsData1eng = [
-    {href:"#prod", img:"Desktop (1600 px).png", badges:[1,8], num:"project 1", title:"Weather-App", description:"This project is a simple website using only basic HTML, JS and CSS tools. Based on a layout from the Preax experience accelerator. And also added receiving data from WeatheAPI.", date:"2024.10.21", model:"https://www.figma.com/design/60Iap3oS9KpQ6XPuBK8CZ2/Weather-App.-1-sprint.-4-task?node-id=4056-3513&node-type=frame&t=2mTZerPDj5WoYQDM-0",site:"weather-app.html"},
-    {href:"#prod", img:"project-1.png", badges:[1,4], num:"project later", title:"project later", description:"This project will appear later.", date:"none", model:"none", site:"none"}, 
-    {href:"#prod", img:"project-1.png", badges:[1,4], num:"project later", title:"project later", description:"This project will appear later.", date:"none", model:"none", site:"none"}, 
+    {href:"#prod", img:"Desktop (1600 px).png", badges:[1,4,8], num:"project 1", title:"Weather-App", description:"This project is a simple website using only basic HTML, JS and CSS tools. Based on a layout from the Preax experience accelerator. And also added receiving data from WeatheAPI.", date:"2024.10.21", model:"https://www.figma.com/design/60Iap3oS9KpQ6XPuBK8CZ2/Weather-App.-1-sprint.-4-task?node-id=4056-3513&node-type=frame&t=2mTZerPDj5WoYQDM-0",site:"weather-app.html"},
+    {href:"#prod", img:"to-do-list.png", badges:[1,4,8], num:"project 2", title:"To-Do-list", description:"A simple to-do sheet without adaptation to mobile devices, with implemented and improved drag-and-drop adding and editing cards with connected localstorage", date:"2024.10.28", model:"https://www.figma.com/design/0InXcSFs6vm5c01OqQEnNs/Trello-board---auto-layout-cards-(Community)?node-id=5-1008&node-type=frame&t=PELKZ6f8NCrIyM7I-0", site:"to-do-list.html"},
+    {href:"#prod", img:"crypto-landing.png", badges:[1,4,8], num:"project 3", title:"Crypto-landing", description:"The main page of the application for monitoring your cryptocurrency portfolio, with portfolio charts and connected api", date:"2024.11.07", model:"https://www.figma.com/design/MXBe6O0vYuieKnzRjMQPQI/Figma-UI-kit---Cryptocurrency-Dashboard-V2-(Community)-(Community)?node-id=301-73213&node-type=canvas&t=UKDT1J44BGb7q1LM-0", site:"crypto.html"},
     ];
 const projectsData1rus = [
     {href:"#prod", img:"Desktop (1600 px).png", badges:[1,8], num:"project 1", title:"Weather-App", description:"Этот проект представляет собой простой сайт с использованием только базовых инструментов HTML, JS и CSS. Выполнено по макету из акселератора опыта Preax. А также добавленно получение данных с WeatheAPI.", date:"2024.10.21", model:"https://www.figma.com/design/60Iap3oS9KpQ6XPuBK8CZ2/Weather-App.-1-sprint.-4-task?node-id=4056-3513&node-type=frame&t=2mTZerPDj5WoYQDM-0",site:"weather-app.html"},
-    {href:"#prod", img:"project-1.png", badges:[1,4], num:"project later", title:"project later", description:"This project will appear later.", date:"none", model:"none", site:"none"}, 
-    {href:"#prod", img:"project-1.png", badges:[1,4], num:"project later", title:"project later", description:"This project will appear later.", date:"none", model:"none", site:"none"}, 
+    {href:"#prod", img:"to-do-list.png", badges:[1,4,8], num:"project 2", title:"To-Do-list", description:"Простой to-do лист без адаптива на мобильные устройства, с реализованным и улучшенным drag-and-drop добавлением и редактированием карточек с подлюченным localstorage", date:"2024.10.28", model:"https://www.figma.com/design/0InXcSFs6vm5c01OqQEnNs/Trello-board---auto-layout-cards-(Community)?node-id=5-1008&node-type=frame&t=PELKZ6f8NCrIyM7I-0", site:"to-do-list.html"},
+    {href:"#prod", img:"crypto-landing.png", badges:[1,4,8], num:"project 3", title:"Crypto-landing", description:"Основная страница приложения для контроля своего криптовалютного портфеля, с графиками портфолио и подключёнными api", date:"2024.11.07", model:"https://www.figma.com/design/MXBe6O0vYuieKnzRjMQPQI/Figma-UI-kit---Cryptocurrency-Dashboard-V2-(Community)-(Community)?node-id=301-73213&node-type=canvas&t=UKDT1J44BGb7q1LM-0", site:"crypto.html"},
     ];
-const projectsData2eng = [
-    {href:"#prod", img:"project-1.png", badges:[1,4], num:"project later", title:"project later", description:"This project will appear later.", date:"none" ,model:"none", site:"none"},
-    {href:"#prod", img:"project-1.png", badges:[1,4], num:"project later", title:"project later", description:"This project will appear later.", date:"none", model:"none", site:"none"},
-    {href:"#prod", img:"project-1.png", badges:[1,4], num:"project later", title:"project later", description:"This project will appear later.", date:"none", model:"none", site:"none"} 
-];
-const projectsData2rus = [
-    {href:"#prod", img:"project-1.png", badges:[1,4], num:"project later", title:"project later", description:"This project will appear later.", date:"none" ,model:"none", site:"none"},
-    {href:"#prod", img:"project-1.png", badges:[1,4], num:"project later", title:"project later", description:"This project will appear later.", date:"none", model:"none", site:"none"},
-    {href:"#prod", img:"project-1.png", badges:[1,4], num:"project later", title:"project later", description:"This project will appear later.", date:"none", model:"none", site:"none"} 
-];
 
 function renderBadges(badgeIds) {
     return badgeIds.map(badgeId => {
@@ -60,6 +50,6 @@ const renderprojects = (projectsData,list) => {
 }
 
 let projectsBlock1 = document.querySelector("#ContentProject");
-let projectsBlock2 = document.querySelector("#CurrentProjects");
+//let projectsBlock2 = document.querySelector("#CurrentProjects");
 renderprojects(projectsData1rus,projectsBlock1);
-renderprojects(projectsData2eng,projectsBlock2);
+//renderprojects(projectsData2eng,projectsBlock2);

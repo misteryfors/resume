@@ -4,22 +4,19 @@
     &__info {
         display: flex;
         flex-direction: column;
-        gap: var(--gap-4);;
+        gap: var(--gap-8);;
     }
 
     &__name {
-        @include main-font-4;
+        @include font-16-normal-unactive;
     }
 
     &__section {
-        margin-top: 16px;
+        margin-top: var(--gap-16);
+        padding: 0 var(--gap-16);
         position: relative;
         cursor: pointer;
         transition: all 0.0s ease;
-    }
-
-    &__section:first-child{
-        margin-top: 0px;
     }
 
     &__section:not(:last-child):after {
@@ -28,56 +25,43 @@
         background-color: rgba(255, 255, 255, 0.1);
         content: "";
         display: block;
-        margin-top: 16px;
+        margin-top: var(--gap-16);
     }
 
     &__social {
-        margin-top: 16px;
-        gap: var(--gap-3);
+        margin-top: var(--gap-16);
+        gap: var(--gap-16);
     }
 
     &__toggle {
-        position: relative;
-        padding: 0 0 16px 48px; /* Оставляем место для стрелки */
-        @include main-font-2-unactive;
+        display: flex;
+        gap: var(--gap-16);
+        margin: var(--gap-16) 0;
+        height: var(--gap-32);
+        @include font-24-normal-unactive;
         user-select: none;
+        align-items: center;
     }
-    &__toggle:hover{
+
+    &__toggle:hover {
         color: var(--secondary-color-4);
     }
-    
-    &__toggle::before {
-        content: '';
-        position: absolute;
-        left: 10px;
-        top: 30%;
-        transform: translateY(-50%) rotate(-45deg);
-        border: solid oklab(0.686679 -0.00398019 -0.0150182);
-        border-radius: 10%;
-        border-width: 0 4px 4px 0;
-        padding: 6px;
-    
-    }
-    
-    &__toggle:hover::before {
-        border-color: var(--secondary-color-4);
+
+
+    &__section.open .sidebar__toggle i {
+        transform: rotate(90deg);
     }
 
-    &__section.open .sidebar__toggle::before{
-        top: 30%;
-        transform: translateY(-50%) rotate(45deg); /* Поворот стрелки при открытии */
-    }
-
-    &__section.open .sidebar__list{
+    &__section.open .sidebar__list {
         max-height: 500px; /* Задаем высоту раскрытого списка */
     }
-    
-    &__list {   
+
+
+    &__list {
         display: flex;
         flex-direction: column;
-        gap: var(--gap-3);;
+        gap: var(--gap-24);
         list-style: none;
-        padding: 0 0 0 2px;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.0s ease;
@@ -86,7 +70,7 @@
     &__link {
         display: flex;
         align-items: center;
-        gap: var(--gap-3);;
+        gap: var(--gap-16);;
     }
 
     &__link:hover{
@@ -95,8 +79,9 @@
     }
 
     &__icon {
-        width: 32px;
-        height: 32px;
+        width: var(--gap-32);
+        height: var(--gap-32);
+        font-size: var(--gap-32);
         border-radius: 50%;
         box-sizing: content-box;
         transition: border-radius 0.5s ease;
@@ -105,13 +90,14 @@
     &__text {
         display: flex;
         flex-direction: column;
-        gap: var(--gap-4);;
+        gap: var(--gap-8);;
         font-family: "DM Sans", sans-serif;
-        
+
+
     }
 
     &__details {
-        @include main-font-3;   
+        @include font-18-normal;
     }
-    
+
 }

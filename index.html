@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/reset.css">
     <link rel="stylesheet" href="src/style.css">
     <link rel="stylesheet" href="src/content/header/header.css">
     <link rel="stylesheet" href="src/content/content.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css">
     <title>Resume</title>
 </head>
 <body>
@@ -13,23 +15,20 @@
         <h1 class="content__title">Резюме на должность Front-end разработчик</h1>         
         <aside class="sidebar">
             <section class="header-section">
-                    <h2 class="header-section__name">Info</h2>
+                    <h2 class="header-section__text">
+                        <i class="ri-account-circle-fill"></i>
+                        Novikov Artem
+                    </h2>
             </section>
             <section class="main-section">
                 <section class="sidebar__section open">
-                    <h3 class="sidebar__toggle">Contacts</h3>
+                    <h3 class="sidebar__toggle"><i class="ri-arrow-right-s-line sidebar__icon"></i>Contacts</h3>
                     <ul class="sidebar__list">
                         <!-- Динамически сгенерированный блок кода в src/content/main/sidebar/sidebar.js-->
                     </ul>
                 </section>
                 <section class="sidebar__section open">
-                    <h3 class="sidebar__toggle">Social</h3>
-                    <ul class="sidebar__list">
-                        <!-- Динамически сгенерированный блок кода в src/content/main/sidebar/sidebar.js -->
-                    </ul>
-                </section>
-                <section class="sidebar__section open">
-                    <h3 class="sidebar__toggle">Languages</h3>
+                    <h3 class="sidebar__toggle"><i class="ri-arrow-right-s-line"></i>Social</h3>
                     <ul class="sidebar__list">
                         <!-- Динамически сгенерированный блок кода в src/content/main/sidebar/sidebar.js -->
                     </ul>
@@ -38,117 +37,125 @@
         </aside>
         <main class="main">
             <section class="header-section">
-                <h2 class="header-section__name">Skills and experience</h2>
+                <nav class="header-section__nav-buttons">
+                    <button class="header-section__button" data-target="section1">short</button>
+                    <button class="header-section__button" data-target="section2">projects</button>
+                    <button class="header-section__button" data-target="section3">skills</button>
+                </nav>
+                <h2 class="header-section__text">
+                    My github
+                    <i class="ri-github-fill"></i>
+                </h2>
             </section>
             <section class="main-section">
-                <ul class="content__list">
-                    <li class="content__item">
-                        <article class="chapter">
-                            <div class="chapter__step">
-                                <div class="chapter__circle"></div>
-                                <div class="chapter__divider"></div>
-                            </div>
-                            <section class="chapter__details">
-                                <h3 class="chapter__name">Briefly about me</h3>
-                                <div class="code-block" contenteditable="true">
-                                    <!-- Динамически сгенерированный блок кода в src/content/main/code-block/code-generator.js -->
+                <section class="scroll-section">
+                    <ul class="content__list">
+                        <li id="section1" class="content__item">
+                            <article class="chapter">
+                                <div class="chapter__step">
+                                    <div class="chapter__circle"></div>
+                                    <div class="chapter__divider"></div>
                                 </div>
-                            </section>
-                        </article>
-                    </li>
-                    <li class="content__item">
-                        <article class="chapter">
-                            <div class="chapter__step">
-                                <div class="chapter__circle"></div>
-                                <div class="chapter__divider"></div>
-                            </div>
-                            <section class="chapter__details">
-                                <h3 class="chapter__name">Latest projects</h3>
-                                <ul class="chapter__chapter-grid chapter-grid--many-lines" id="ContentProject">
-                                    <!-- Динамически сгенерированный блок кода в src/content/main/project-list.js -->
-                                </ul>
-                            </section>
-                        </article>
-                    </li>
-                    <li class="content__item">
-                        <article class="chapter">
-                            <div class="chapter__step">
-                                <div class="chapter__circle"></div>
-                                <div class="chapter__divider"></div>
-                            </div>
-                            <section class="chapter__details">
-                                <h3 class="chapter__name">Main skills</h3>
-                                <ul class="chapter__chapter-grid chapter-grid--one-line">
-                                    <li class="chapter-grid__item">                                       
-                                        <section class="chapter-grid__section--solo">
-                                            <p class="chapter-grid__section-text">React JS</p>                                            
-                                        </section>
-                                    </li>
-                                    <li class="chapter-grid__item">
-                                        <section class="chapter-grid__section--list">
-                                            <p class="chapter-grid__section-text">Chakra UI</p>
-                                            <p class="chapter-grid__section-text">Emotion</p>
-                                            <p class="chapter-grid__section-text">Framer</p>
-                                        </section>                              
-                                    </li>
-                                    <li class="chapter-grid__item">
-                                        <section class="chapter-grid__section--two-vertical">
-                                            <p class="chapter-grid__section-text">Type script</p>
-                                            <p class="chapter-grid__section-text">Next JS</p> 
-                                        </section>                                       
-                                    </li>
-                                    <li class="chapter-grid__item">
-                                        <section class="chapter-grid__section--two-gorizontal">                                        <p class="chapter-grid__section-text">HTML</p>
+                                <section class="chapter__details">
+                                    <h3 class="chapter__name">Briefly about me</h3>
+                                    <div class="code-block" contenteditable="true">
+                                        <!-- Динамически сгенерированный блок кода в src/content/main/code-block/code-generator.js -->
+                                    </div>
+                                </section>
+                            </article>
+                        </li>
+                        <li id="section2" class="content__item">
+                            <article class="chapter">
+                                <div class="chapter__step">
+                                    <div class="chapter__circle"></div>
+                                    <div class="chapter__divider"></div>
+                                </div>
+                                <section class="chapter__details">
+                                    <h3 class="chapter__name">Latest projects</h3>
+                                    <ul class="chapter__chapter-grid chapter-grid--many-lines" id="ContentProject">
+                                        <!-- Динамически сгенерированный блок кода в src/content/main/project-list.js -->
+                                    </ul>
+                                </section>
+                            </article>
+                        </li>
+                        <li id="section3" class="content__item">
+                            <article class="chapter">
+                                <div class="chapter__step">
+                                    <div class="chapter__circle"></div>
+                                    <div class="chapter__divider"></div>
+                                </div>
+                                <section class="chapter__details">
+                                    <h3 class="chapter__name">Main skills</h3>
+                                    <ul class="chapter__chapter-grid chapter-grid--one-line">
+                                        <li class="chapter-grid__item">
+                                            <section class="chapter-grid__section--solo">
+                                                <p class="chapter-grid__section-text">React JS</p>
+                                            </section>
+                                        </li>
+                                        <li class="chapter-grid__item">
+                                            <section class="chapter-grid__section--list">
+                                                <p class="chapter-grid__section-text">Chakra UI</p>
+                                                <p class="chapter-grid__section-text">Emotion</p>
+                                                <p class="chapter-grid__section-text">Framer</p>
+                                            </section>
+                                        </li>
+                                        <li class="chapter-grid__item">
                                             <section class="chapter-grid__section--two-vertical">
-                                                <p class="chapter-grid__section-text">CSS</p>  
-                                                <p class="chapter-grid__section-text">JS</p> 
-                                            </section>  
-                                        </section>  
-                                    </li>                                   
-                                </ul>
-                            </section>
-                        </article>
-                    </li>
-                    <li class="content__item">
-                        <article class="chapter">
-                            <div class="chapter__step">
-                                <div class="chapter__circle"></div>
-                                <div class="chapter__divider"></div>
-                            </div>
-                            <section class="chapter__details">
-                                <h3 class="chapter__name">Main tools</h3>
-                                <ul class="chapter__chapter-grid chapter-grid--one-line">
-                                    <li class="chapter-grid__item">
-                                        <section class="chapter-grid__section--two-vertical">
-                                            <p class="chapter-grid__section-text">VS code</p>
-                                            <p class="chapter-grid__section-text">Web Storm</p> 
-                                        </section>                                       
-                                    </li>
-                                    <li class="chapter-grid__item">
-                                        <section class="chapter-grid__section--two-vertical">
-                                            <p class="chapter-grid__section-text">Webpack</p>
-                                            <p class="chapter-grid__section-text">Docker</p> 
-                                        </section>                                       
-                                    </li>
-                                    <li class="chapter-grid__item">                                       
-                                        <section class="chapter-grid__section--solo">
-                                            <p class="chapter-grid__section-text">Dbeaver</p>                                            
-                                        </section>
-                                    </li>
-                                    <li class="chapter-grid__item">                                       
-                                        <section class="chapter-grid__section--solo">
-                                            <p class="chapter-grid__section-text">Git</p>                                            
-                                        </section>
-                                    </li>                                                                       
-                                </ul>
-                            </section>
-                        </article>
-                    </li>
-                </ul>
+                                                <p class="chapter-grid__section-text">Type script</p>
+                                                <p class="chapter-grid__section-text">Next JS</p>
+                                            </section>
+                                        </li>
+                                        <li class="chapter-grid__item">
+                                            <section class="chapter-grid__section--two-gorizontal">                                        <p class="chapter-grid__section-text">HTML</p>
+                                                <section class="chapter-grid__section--two-vertical">
+                                                    <p class="chapter-grid__section-text">CSS</p>
+                                                    <p class="chapter-grid__section-text">JS</p>
+                                                </section>
+                                            </section>
+                                        </li>
+                                    </ul>
+                                </section>
+                            </article>
+                        </li>
+                        <li id="section4" class="content__item">
+                            <article class="chapter">
+                                <div class="chapter__step">
+                                    <div class="chapter__circle"></div>
+                                    <div class="chapter__divider"></div>
+                                </div>
+                                <section class="chapter__details">
+                                    <h3 class="chapter__name">Main tools</h3>
+                                    <ul class="chapter__chapter-grid chapter-grid--one-line">
+                                        <li class="chapter-grid__item">
+                                            <section class="chapter-grid__section--two-vertical">
+                                                <p class="chapter-grid__section-text">VS code</p>
+                                                <p class="chapter-grid__section-text">Web Storm</p>
+                                            </section>
+                                        </li>
+                                        <li class="chapter-grid__item">
+                                            <section class="chapter-grid__section--two-vertical">
+                                                <p class="chapter-grid__section-text">Webpack</p>
+                                                <p class="chapter-grid__section-text">Docker</p>
+                                            </section>
+                                        </li>
+                                        <li class="chapter-grid__item">
+                                            <section class="chapter-grid__section--solo">
+                                                <p class="chapter-grid__section-text">Dbeaver</p>
+                                            </section>
+                                        </li>
+                                        <li class="chapter-grid__item">
+                                            <section class="chapter-grid__section--solo">
+                                                <p class="chapter-grid__section-text">Git</p>
+                                            </section>
+                                        </li>
+                                    </ul>
+                                </section>
+                            </article>
+                        </li>
+                    </ul>
+                </section>
+                </section>
             </section>
-            
-
-        </section>
         </main>
         <section class="secondary-section">
             <section class="header-section">
@@ -170,5 +177,38 @@
     <script src="./src/content/sidebar/sidebar.js"></script>
     <script src="./src/content/main/code-block/code-generation.js"></script>
     <script src="./src/content/main/project-list.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.header-section__button');
+            const sections = document.querySelectorAll('.content__item');
+            const scrollContainer = document.querySelector('.scroll-section'); // Контейнер с прокруткой
+
+            function setActiveButton() {
+                let index = sections.length;
+
+                while (--index && scrollContainer.scrollTop + 300 < sections[index].offsetTop) {}
+
+                buttons.forEach((button) => button.classList.remove('active'));
+                buttons[index].classList.add('active');
+            }
+
+            scrollContainer.addEventListener('scroll', setActiveButton);
+
+            // Прокрутка к секции при клике на кнопку
+            buttons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const targetId = button.getAttribute('data-target');
+                    const targetElement = document.getElementById(targetId);
+
+                    // Прокрутка только внутри scrollContainer
+                    scrollContainer.scrollTo({
+                        top: targetElement.offsetTop - scrollContainer.offsetTop,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+
+    </script>
 </body>
 </html>

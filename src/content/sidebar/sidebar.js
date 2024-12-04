@@ -1,7 +1,6 @@
 const sidebarData = {
     contacts: [
         { type: 'Email', icon: 'Icon.svg', details: 'artem.novickov@mail.ru', href: 'mailto:artem.novickov@mail.ru' },
-        { type: 'Website', icon: 'Icon-1.svg', details: 'https://aldesign.it', href: 'https://aldesign.it' },
         { type: 'Phone', icon: 'Icon-2.svg', details: '+7 915 939 25 15', href: 'tel:+79159392515' },
         { type: 'Address', icon: 'Icon-3.svg', details: 'Nizni Novgorod, Russia', href: '#' }
     ],
@@ -37,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebarSections = document.querySelectorAll('.sidebar__section');
     generateSidebarList(sidebarSections[0], sidebarData.contacts);
     generateSidebarList(sidebarSections[1], sidebarData.social);
-    generateSidebarList(sidebarSections[2], sidebarData.lang);
+    //generateSidebarList(sidebarSections[2], sidebarData.lang);
 });
 
 document.querySelectorAll('.sidebar__toggle').forEach(toggle => {
