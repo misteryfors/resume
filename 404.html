@@ -5,13 +5,9 @@
     <script type="text/javascript">
         // Проверяем, если текущий путь не начинается с /resume/
         var currentPath = window.location.pathname;
-
-        // Убираем базовый путь /resume/ из текущего пути
-        if (currentPath.startsWith('/resume/')) {
-            var newPath = currentPath.replace('/resume', ''); // Убираем '/resume' из пути
-            window.location.replace(newPath);  // Перенаправляем на новый путь
-        } else {
-            window.location.replace('/resume/'); // Если не совпадает, просто идем на главную страницу
+        if (!currentPath.startsWith('/resume/')) {
+            var newPath = '/resume' + currentPath;
+            window.location.replace(newPath);
         }
     </script>
 </head>
