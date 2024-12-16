@@ -1,0 +1,29 @@
+.products-page__title {
+  font-size: 2em;
+  margin-bottom: 16px;
+}
+.products-page__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+.products-page__pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+.products-page__pagination-button {
+  padding: 8px 16px;
+  border: 1px solid #3498db;
+  background-color: transparent;
+  color: #3498db;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.products-page__pagination-button--active {
+  background-color: #3498db;
+  color: #fff;
+}
+
+/*# sourceMappingURL=ProductPage.css.map */

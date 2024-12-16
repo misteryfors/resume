@@ -1,0 +1,35 @@
+@use '../_variables' as *;
+
+.products-page {
+  &__title {
+    font-size: 2em;
+    margin-bottom: 16px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+
+    &-button {
+      padding: 8px 16px;
+      border: 1px solid $primary-color;
+      background-color: transparent;
+      color: $primary-color;
+      border-radius: $border-radius;
+      cursor: pointer;
+
+      &--active {
+        background-color: $primary-color;
+        color: #fff;
+      }
+    }
+  }
+}

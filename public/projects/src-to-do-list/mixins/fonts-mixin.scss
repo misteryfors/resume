@@ -1,0 +1,68 @@
+@mixin main-font-1{
+    font-size: var(--font-size-1);
+    font-weight: 600;
+    color: var(--font-color-7);    
+    line-height: 1.5;
+}
+
+@mixin main-font-2{
+    font-size: var(--font-size-2);
+    font-weight: 600;
+    color: var(--font-color-8);
+    line-height: 2.5;
+}
+
+@mixin main-font-3{
+    font-size: var(--font-size-3);
+    font-weight: 400;
+    color: var(--font-color-8);
+    line-height: 1.5;
+}
+
+@mixin second-font-1{
+    font-size: var(--font-size-4);
+    font-weight: 600;
+    color: var(--font-color-1);
+    background-color: var(--secondary-color-1);
+    line-height: 1.5;
+}
+
+@mixin second-font-2{
+    font-size: var(--font-size-4);
+    font-weight: 600;
+    color: var(--font-color-2);
+    background-color: var(--secondary-color-2);
+    line-height: 1.5;
+}
+
+@mixin second-font-3{
+    font-size: var(--font-size-4);
+    font-weight: 600;
+    color: var(--font-color-3);
+    background-color: var(--secondary-color-3);
+    line-height: 1.5;
+}
+
+@mixin second-font-4{
+    font-size: var(--font-size-4);
+    font-weight: 600;
+    color: var(--font-color-4);
+    background-color: var(--secondary-color-4);
+    line-height: 1.5;
+}
+
+@mixin second-font-5{
+    font-size: var(--font-size-4);
+    font-weight: 600;
+    color: var(--font-color-5);
+    background-color: var(--secondary-color-5);
+    line-height: 1.5;
+}
+
+@mixin second-font-6{
+    font-size: var(--font-size-4);
+    font-weight: 600;
+    color: var(--font-color-6);
+    background-color: var(--secondary-color-6);
+    line-height: 1.5;
+}

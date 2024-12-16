@@ -1,0 +1,41 @@
+@import "../../../css/mixins/fonts-mixin.scss";
+
+.features{
+  &__name-caption{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-16);
+  }
+  &__info-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: var(--gap-30);
+  }
+
+  &__info-block{
+    display: flex;
+    flex-direction: column;
+    padding: var(--gap-40);
+    gap: var(--gap-20);
+    border-radius: var(--border-radius-12);
+    box-shadow: var(--border-dark-15);
+    background: var(--dark-color-10);
+  }
+
+  &__block-name{
+    @include inter-medium;
+    font-size: var(--font-size-24);
+    color: var(--absolute-color-white);
+  }
+
+}
+
+@media (width<=1280px){
+  .features{
+    &__info-grid{
+      grid-template-rows: repeat(4,1fr);
+      grid-template-columns: 1fr;
+    }
+  }
+}

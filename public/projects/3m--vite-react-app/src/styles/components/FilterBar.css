@@ -1,0 +1,23 @@
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.filter-bar__button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+.filter-bar__button--active {
+  background-color: #232353;
+  color: #fff;
+}
+.filter-bar__search {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/*# sourceMappingURL=FilterBar.css.map */
