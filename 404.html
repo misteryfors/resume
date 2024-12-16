@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta http-equiv="refresh" content="0; url=/resume/" />
     <script type="text/javascript">
-        // Перенаправление на индексный файл.
-        var path = window.location.pathname;
-        var newPath = path;
-        window.location.replace(newPath);
+        // Проверяем, если текущий путь не начинается с /resume/
+        var currentPath = window.location.pathname;
+        if (!currentPath.startsWith('/resume/')) {
+            var newPath = '/resume' + currentPath;
+            window.location.replace(newPath);
+        }
     </script>
 </head>
 <body>
