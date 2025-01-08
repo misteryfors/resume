@@ -23,7 +23,7 @@ export async function sliderRender(data,slider,storage) {
                 <span class="slider__item-name--short">${coin.id}</span>
             </p>
             <div class="slider__item-arrow-block">
-                <img class="slider__item-arrow" id="${coin.id}-arrow" src="./public/price-arrow-up.svg">
+                <img class="slider__item-arrow" id="${coin.id}-arrow" src="src-crypto/public/price-arrow-up.svg">
             </div>
             <p class="slider__item-price">
                 <span class="slider__item-price--current" id="${coin.id}-price"></span>

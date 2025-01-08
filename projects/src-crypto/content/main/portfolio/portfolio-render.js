@@ -17,7 +17,7 @@ export async function portfolioRender(data, portfolio, storage) {
                         <span class="portfolio__item-main--price">$${(price.Data[coin.id+"-USD"].VALUE*coin.count).toPrecision(7)}</span>
                     </p>
                     <p class="portfolio__item-support">
-                        <span class="portfolio__item-support--different-down">${price.Data[coin.id+"-USD"].CURRENT_DAY_CHANGE_PERCENTAGE.toFixed(2)}</span>
+                        <span class="portfolio__item-support--different-down">${price.Data[coin.id+"-USD"].CURRENT_DAY_CHANGE_PERCENTAGE.toFixed(2)+"%"}</span>
                         <span class="portfolio__item-support--price">${coin.count +" "+ coin.id}</span>
                     </p>
                 </div>

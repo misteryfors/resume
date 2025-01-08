@@ -20,21 +20,21 @@ export async function addCoin(coin, count) {
 
             let portfolio = document.querySelector(".main__portfolio");
             let newCoin = document.createElement("div");
-            newCoin.className = "main__portfolio-item";
+            newCoin.className = "portfolio__item";
             newCoin.setAttribute("data-coin-id", coin);  // Устанавливаем ID монеты
 
             newCoin.innerHTML = `
-                <button class="main__portfolio-item-button">
-                        <img class="main__portfolio-item-icon" src="${data[coin].image}">
+                <button class="portfolio__item-button">
+                        <img class="portfolio__item-icon" src="${data[coin].image}">
                 </button>
-                <div class="main__portfolio-item-text">
-                    <p class="main__portfolio-item-main">
-                        <span class="main__portfolio-item-main--name">${data[coin].name}</span>
-                        <span class="main__portfolio-item-main--price">$${(price.Data[coin+"-USD"].VALUE * count).toPrecision(7)}</span>
+                <div class="portfolio__item-text">
+                    <p class="portfolio__item-main">
+                        <span class="portfolio__item-main--name">${data[coin].name}</span>
+                        <span class="portfolio__item-main--price">$${(price.Data[coin+"-USD"].VALUE * count).toPrecision(7)}</span>
                     </p>
-                    <p class="main__portfolio-item-support">
-                        <span class="main__portfolio-item-support--different-down">${price.Data[coin+"-USD"].CURRENT_DAY_CHANGE_PERCENTAGE.toFixed(2)}</span>
-                        <span class="main__portfolio-item-support--price">${count + " " + coin}</span>
+                    <p class="portfolio__item-support">
+                        <span class="portfolio__item-support--different-down">${price.Data[coin+"-USD"].CURRENT_DAY_CHANGE_PERCENTAGE.toFixed(2)}</span>
+                        <span class="portfolio__item-support--price">${count + " " + coin}</span>
                     </p>
                 </div>
             `;
@@ -47,7 +47,7 @@ export async function addCoin(coin, count) {
             localStorage.setItem("CryptoData", JSON.stringify(storage));
 
             // Добавляем обработчик удаления
-            const deleteButton = newCoin.querySelector(".main__portfolio-item-button");
+            const deleteButton = newCoin.querySelector(".portfolio__item-button");
             deleteButton.addEventListener("click", () => {
                 console.log(`Удалён coin: ${coin}`);
                 const updatedStorage = storage.filter(item => item.id !== coin);

@@ -6,9 +6,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 28px 30px;
+  gap: var(--gap-32);
 }
 .header__tag {
-  width: 182px;
+  max-width: 182px;
   height: 48px;
   font-size: var(--font-size-32);
   font-weight: 600;
@@ -142,6 +143,21 @@
 .header__account-arrow {
   width: 24px;
   height: 24px;
+}
+
+@media (width < 600px) {
+  .header {
+    padding: 30px 24px;
+  }
+  .header__tag {
+    display: none;
+  }
+  .header__notifications {
+    display: none;
+  }
+  .header__account-img {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=header.css.map */

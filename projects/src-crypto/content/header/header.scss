@@ -6,9 +6,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 28px 30px;
+  gap: var(--gap-32);
 
   &__tag{
-    width: 182px;
+    max-width: 182px;
     height: 48px;
     @include font-32-semi-bold;
     display: flex;
@@ -147,5 +148,20 @@
   &__account-arrow{
     width: 24px;
     height: 24px;
+  }
+}
+
+@media (width<600px) {
+  .header{
+    padding: 30px 24px;
+    &__tag{
+      display: none;
+    }
+    &__notifications {
+      display: none;
+    }
+    &__account-img {
+      display: none;
+    }
   }
 }

@@ -18,12 +18,14 @@
   font-weight: 400;
   color: var(--font-color-1);
   line-height: normal;
+  min-width: 100px;
 }
 .live-market__grid-item--standard-value {
   font-size: var(--font-size-14);
   font-weight: 400;
   color: var(--font-color-3);
   line-height: normal;
+  min-width: 50px;
 }
 .live-market__grid-item--change-value {
   font-size: var(--font-size-14);
@@ -31,6 +33,7 @@
   color: var(--font-color-1);
   line-height: normal;
   color: var(--font-color-4);
+  min-width: 50px;
 }
 .live-market__grid-item--coin-value {
   font-size: var(--font-size-14);
@@ -40,10 +43,24 @@
   gap: var(--gap-10);
   display: flex;
   align-items: center;
+  min-width: 100px;
+  justify-items: left;
 }
 .live-market__grid-item--coin-icon {
   width: 32px;
   height: 32px;
+}
+.live-market__grid-item--coin-name {
+  min-width: 100px;
+}
+@media (width < 800px) {
+  .live-market {
+    overflow: auto;
+  }
+  .live-market__grid {
+    overflow: auto;
+    gap: 8px;
+  }
 }
 
 /*# sourceMappingURL=live-market.css.map */
