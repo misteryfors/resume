@@ -1,0 +1,132 @@
+@import "../../css/mixins/fonts-mixin.scss";
+
+.header{
+  letter-spacing: 0;
+
+  &__top-banner{
+    padding: var(--gap-20) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  &__banner-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    @include inter-regular;
+    font-size: var(--font-size-18);
+    gap: var(--gap-10);
+    cursor: pointer;
+    fill: var(--yellow-color-55);
+  }
+
+  &__logo {
+    all: unset;
+    width: 178.91px;
+    height: 50px;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    background-image: url("../../assets/Logo-desktop.svg");
+    cursor: pointer;
+  }
+
+  &__bar{
+    padding: var(--gap-24) 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__icon{
+    color: white;
+    fill: whitesmoke;
+    transition: fill 0.3s ease;
+  }
+
+  &__pages-link{
+    display: flex;
+    gap: var(--gap-40);
+  }
+
+  &__page-link{
+    padding: var(--gap-14) var(--gap-24);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: var(--border-radius-10);
+    outline: none;
+    color: var(--gray-color-50);
+    box-sizing: border-box;
+    @include inter-medium;
+    font-size: var(--font-size-18);
+
+    &:hover{
+      background: var(--dark-color-08);
+      box-shadow: var(--border-dark-20);
+      color: var(--absolute-color-white);
+    }
+
+  }
+
+  &__more-options{
+    display: none;
+    background: none;
+    border: none;
+    color: var(--absolute-color-white);
+  }
+
+  &__contact{
+    padding: var(--gap-14) var(--gap-24);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: var(--yellow-color-55);
+    border-radius: var(--border-radius-10);
+    outline: none;
+    color: var(--dark-color-08);
+    box-sizing: border-box;
+    @include inter-medium;
+    font-size: var(--font-size-18);
+  }
+
+}
+
+@media (width<=1920px){
+  .header {
+    &__logo {
+      width: 178.91px;
+      height: 50px;
+      background-image: url("../../assets/Logo-desktop.svg");
+    }
+  }
+}
+
+@media (width<=1600px){
+  .header {
+    &__logo {
+      width: 143.13px;
+      height: 40px;
+      background-image: url("../../assets/Logo-laptop.svg");
+    }
+  }
+}
+
+@media (width<=1280px){
+  .header {
+    &__pages-link{
+      display: none;
+    }
+    &__contact{
+      display: none;
+    }
+    &__more-options {
+      display: block;
+    }
+  }
+}

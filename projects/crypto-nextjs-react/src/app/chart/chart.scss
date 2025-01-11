@@ -1,0 +1,74 @@
+@import "../../mixins/fonts-mixin.scss";
+
+@mixin block($width,$height,$border-radius,$background,$padding){
+  width: $width;
+  height: $height;
+  border-radius: $border-radius;
+  background: $background;
+  display: flex;
+  flex-direction: column;
+  padding: $padding;
+}
+
+.chart{
+  @include block(100%,100%,var(--border-radius-1),var(--primary-color-2),30px 24px 28px 30px);
+
+  gap: var(--gap-24);
+
+
+  &__header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  &__menu{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--left{
+      display: flex;
+      flex-direction: column;
+    }
+    &--right{
+      display: flex;
+      flex-direction: row;
+      gap: var(--gap-10);
+    }
+  }
+
+  &__coin-select{
+    @include font-14-normal;
+    background: none;
+  }
+
+  &__coin-price{
+    @include font-18-medium;
+  }
+
+  &__button{
+    @include block(100%,100%,var(--border-radius-1),var(--primary-color-2),0px var(--gap-16));
+    border: 1px solid #31353F;
+    @include font-10-medium;
+    line-height: 22px;
+
+    &:hover{
+      background: var(--primary-color-3);
+    }
+  }
+
+  &__graph{
+
+  }
+
+}
+
+@media (width<800px) {
+  .chart{
+    &__menu{
+      flex-direction: column;
+    }
+  }
+}
