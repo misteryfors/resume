@@ -1,0 +1,269 @@
+@import "./mixins/fonts-mixin.scss";
+
+@mixin slot-separator($gap) {
+  display: flex;
+  gap: calc($gap * 2);
+  position: relative;
+  align-items: stretch;
+  list-style: none;
+  padding: 0;
+
+  & > * {
+    position: relative;
+    padding: var(--gap-80) 0;
+  }
+
+  & > *:not(:last-child) {
+    display: flex;
+    justify-content: center;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: calc(-1 * $gap);
+      width: 2px;
+      height: 100%;
+      box-shadow: var(--border-dark-15);
+    }
+  }
+}
+
+@mixin slot-separator-mobile($gap) {
+  flex-direction: column;
+  padding: var(--gap-80) 0;
+
+  & > * {
+    position: relative;
+    padding: 0;
+  }
+
+  & > *:not(:last-child) {
+    &::after {
+      top: auto;
+      bottom: calc(-1 * $gap);
+      right: 0;
+      width: 100%;
+      height: 2px;
+    }
+  }
+}
+
+.content-block {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-light{
+  background: var(--dark-color-10);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 -1px 0px 0px inset var(--dark-color-20);
+  box-sizing: border-box;
+}
+
+.content-dark{
+  background: var(--dark-color-08);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 -1px 0px 0px inset var(--dark-color-20);
+  box-sizing: border-box;
+}
+
+.container-center{
+  width: var(--content-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--gap-80) 0;
+}
+
+.container-between{
+  width: var(--content-size);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--gap-80) 0;
+}
+
+.container-center{
+  width: var(--content-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--gap-80) 0;
+}
+
+.container-grid{
+  width: var(--content-size);
+  display: grid;
+  align-items: center;
+}
+
+.Main-text-white{
+  @include inter-regular;
+  font-size: var(--font-size-18);
+  color: var(--absolute-color-white);
+  margin-right: -0.3ch;
+}
+
+.Main-text-white{
+  @include inter-regular;
+  font-size: var(--font-size-18);
+  color: var(--absolute-color-white);
+  margin-right: -0.3ch;
+}
+
+.Icon-xlarge {
+  width: 54px;
+  height: 54px;
+  position: unset;
+}
+
+.Icon-large {
+  width: 50px;
+  height: 50px;
+  position: unset;
+}
+
+.Icon-big {
+  width: 34px;
+  height: 34px;
+  position: unset;
+}
+
+.Icon-medium {
+  width: 24px;
+  height: 24px;
+  position: unset;
+}
+
+.Icon-small {
+  width: 20px;
+  height: 20px;
+  position: unset;
+}
+
+
+.Separator-header{
+  width: 519px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-50);
+}
+
+.Separator-header-icon{
+  width: 80px;
+  height: 80px;
+}
+
+.Separator-header-name{
+  @include Sans-semi-bold;
+  font-size: var(--font-size-40);
+  color: var(--absolute-color-white);
+}
+
+
+.Separator-main{
+  width: 917px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Slot-separator-0 {
+  @include slot-separator(0);
+}
+
+.Slot-separator-50 {
+  @include slot-separator(var(--gap-50));
+}
+
+.Slot-separator-60 {
+  @include slot-separator(var(--gap-60));
+}
+
+.Slot-separator-80 {
+  @include slot-separator(var(--gap-80));
+}
+
+@media (width<=1600px) {
+
+  .Separator-header-icon{
+    width: 60px;
+    height: 60px;
+  }
+
+  .Separator-header{
+    width: 413px;
+  }
+
+  .Separator-main{
+    width: 747px;
+  }
+
+  .Icon-large {
+    width: 40px;
+    height: 40px;
+    position: unset;
+  }
+
+  .Icon-big{
+    width: 26px;
+    height: 26px;
+  }
+
+  .Icon-medium {
+    width: 20px;
+    height: 20px;
+  }
+
+  .Icon-small{
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (width <= 1280px) {
+
+  .Separator-header{
+    width: 100%;
+  }
+
+  .Separator-header-icon{
+    width: 50px;
+    height: 50px;
+  }
+
+
+  .Separator-main{
+    width: 100%;
+  }
+
+  .Slot-separator-0 {
+    @include slot-separator-mobile(0);
+  }
+
+  .Slot-separator-50 {
+    @include slot-separator-mobile(var(--gap-50));
+  }
+
+  .Slot-separator-60 {
+    @include slot-separator-mobile(var(--gap-60));
+  }
+
+  .Slot-separator-80 {
+    @include slot-separator-mobile(var(--gap-80));
+  }
+
+  .Icon-large {
+    width: 30px;
+    height: 30px;
+    position: unset;
+  }
+}

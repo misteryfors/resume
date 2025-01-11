@@ -1,0 +1,21 @@
+.footer {
+  width: 100%;
+  padding: 32px;
+  box-sizing: border-box;
+}
+.footer__link {
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-16);
+  font-weight: 400;
+  text-align: center;
+  color: rgb(245, 244, 244);
+}
+.footer__link-span {
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-16);
+  font-weight: 400;
+  text-align: center;
+  color: rgb(245, 244, 244);
+}
+
+/*# sourceMappingURL=Footer.css.map */
