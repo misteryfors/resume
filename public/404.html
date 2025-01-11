@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="refresh" content="0; url=/resume/" />
+    <script type="text/javascript">
+        // Проверяем, если текущий путь не начинается с /resume/
+        var currentPath = window.location.pathname;
+        if (!currentPath.startsWith('/resume/')) {
+            var newPath = '/resume' + currentPath;
+            window.location.replace(newPath);
+        }
+    </script>
+</head>
+<body>
+<p>Redirecting...</p>
+</body>
+</html>

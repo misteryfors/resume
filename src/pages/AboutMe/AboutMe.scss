@@ -1,0 +1,138 @@
+@import "../../css/mixins/fonts-mixin.scss";
+
+
+.about-me{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--gap-32);
+
+    &__text{
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-16);
+    }
+
+    &__heading{
+        @include inter-medium;
+        font-size: var(--font-size-70);
+        color: var(--absolute-color-white);
+    }
+
+    &__caption{
+        @include Sans-medium;
+        font-size: var(--font-size-30);
+        color: #9CDCFE;
+    }
+
+    &__quote{
+
+    }
+}
+
+.code-block {
+    background-color: var(--dark-color-08);
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: 100%;
+    padding: 16px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    color: #d4d4d4;
+    line-height: 1.5em;
+    white-space: pre-wrap;
+    word-break: break-word;
+
+    border: 1px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    font-size: var(--code-font-size);
+
+    /* Стили для скроллбара WebKit-браузеров (Chrome, Safari, Edge) */
+    &::-webkit-scrollbar {
+        width: 6px; /* Тонкий скроллбар */
+        height: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent; /* Прозрачный трек */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent; /* Прозрачный, почти невидимый */
+        border-radius: 10px;
+        transition: background-color 0.3s ease; /* Плавное появление */
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.5); /* Более заметный при наведении */
+    }
+
+    /* Для поддержки плавного скрытия скроллбара на мобильных устройствах */
+    
+
+
+    &__selector {
+        color: #569CD6; /* Цвет селекторов */
+    }
+    
+    &__property {
+        color: #9CDCFE; /* Цвет свойств */
+    }
+    
+    &__value {
+        color: #CE9178; /* Цвет значений */
+    }
+    
+    &__punctuation {
+        color: #D4D4D4; /* Цвет для двоеточий и фигурных скобок */
+    }
+
+    &__indent-1,
+    &__indent-2,
+    &__indent-3 {
+        display: inline-block; /* Поменять на блочный элемент */
+        padding-left: 32px;
+    }
+
+}
+
+.code-block[contenteditable="true"] {
+    outline: none;
+    caret-color: #ffffff;
+    
+    font-weight: normal;
+}
+@media (width<=1600px){
+    .code-block{
+        font-size: 14px;
+        padding: 8px;
+
+        &__indent-1,
+        &__indent-2,
+        &__indent-3 {
+            padding-left: 24px;
+    }
+    }
+       
+    
+}
+
+@media (width<=800px){
+    .about-me{
+        flex-direction: column;
+    }
+    .code-block{
+        font-size: 10px;
+
+        &__indent-1,
+        &__indent-2,
+        &__indent-3 {
+            padding-left: 16px;
+        } 
+    }
+      
+
+}
+

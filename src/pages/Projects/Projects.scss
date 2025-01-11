@@ -1,0 +1,207 @@
+@import "../../css/mixins/fonts-mixin.scss";
+
+.projects{
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-24);
+  padding: var(--gap-24) var(--gap-16) var(--gap-16);
+
+  &__list{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--gap-24);
+  justify-content: space-between;
+  transition: max-height 2s ease;
+  max-height: calc((350px + var(--gap-24))*2);
+  overflow: hidden;
+
+    &--show {
+      max-height: calc-size(max-content, size);
+    }
+  }
+
+  &__show-more{
+    background: var(--dark-color-08);
+    border-radius: 8px;
+    border: 1px solid #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: var(--gap-24);
+    color: var(--gray-color-60);
+    cursor: pointer;
+    align-self: center;
+    justify-self: center;
+    width: 80%;
+
+    &:hover{
+      color: var(--absolute-color-white);
+    }
+  }
+
+  &__project {
+    display: flex;
+    max-width: 350px;
+    flex-direction: column;
+    border: 1px solid #333;
+    background: var(--dark-color-08);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    height: 350px; // Задайте фиксированную высоту для карточки
+    overflow: hidden; // Скрыть переполнение
+
+    &:hover .projects__description {
+      //height: auto; // Позволяет тексту занимать необходимое пространство
+    }
+
+    &:hover .projects__description-text {
+      //-webkit-line-clamp: unset; /* Сбросить ограничение на количество строк */
+    }
+
+    &:hover .projects__img {
+      height: 40px; // Убедитесь, что высота изображения убирается
+    }
+  }
+
+  &__img {
+    width: 100%;
+    flex-shrink: 0;
+    height: 120px; // Фиксированная высота для изображения
+    object-fit: cover;
+    transition: height 1.3s ease; // Плавное изменение высоты
+    overflow: hidden;
+  }
+
+  &__overlay{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1; // Убедись, что он выше
+    pointer-events: none; // Отключение взаимодействия
+    width: 100%;
+    height: 120px; // Фиксированная высота для изображения
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__name-title{
+    color: var(--gray-color-90);
+    white-space: nowrap;
+  }
+
+  &__badges {
+    display: flex; /* Используйте flex для расположения значков */
+    gap: var(--gap-8);; /* Отступы между значками */
+    z-index: 2; /* Обеспечьте, чтобы значки были поверх описания */
+  }
+
+  &__badge {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; // Измените на space-between, чтобы разместить текст и ссылки по разным концам
+    gap: var(--gap-8);; // Уменьшите промежутки для большего контроля
+    padding: 20px;
+    transition: height 1.0s ease;
+    box-shadow: 0 1px 0px 0px inset var(--dark-color-15);
+    flex-grow: 1; // Используйте flex-grow для заполнения оставшегося пространства
+    overflow: hidden; // Скрыть переполнение
+    z-index: 1;
+
+  }
+
+  &__description-text {
+    display: -webkit-box; /* Установка отображения в виде блочной модели для обрезки */
+    -webkit-box-orient: vertical; /* Вертикальная ориентация */
+    //-webkit-line-clamp: 3; /* Указание количества строк для обрезки */
+    overflow: hidden; /* Скрытие переполнения */
+    text-overflow: ellipsis; /* Добавление многоточия */
+    transition: max-height 0.3s ease; // Плавное изменение высоты текста
+  }
+
+  &__description-date{
+    transition: max-height 0.3s ease; // Плавное изменение высоты текста
+  }
+
+  &__links-block {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; // Выравнивание по концу
+    align-items: center; // Вертикальное выравнивание по центру
+
+  }
+
+
+  &__link {
+    width: 30%;
+    max-width: 129px;
+    padding: var(--gap-8);
+    color: var(--gray-color-60);
+    background: var(--dark-color-08);
+    border-radius: 8px;
+    border: 1px solid #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+
+
+    &:hover{
+      color: var(--absolute-color-white);
+    }
+  }
+
+}
+@media (width<=1600px) {
+  .projects {
+    &__project{
+      max-width: 300px;
+    }
+
+
+  }
+}
+@media (width<=1280px) {
+  .projects {
+    &__list {
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--gap-24);
+      justify-content: space-between;
+      max-height: calc((350px + var(--gap-24)) * 3);
+
+      &--show {
+        max-height: calc-size(max-content, size);
+      }
+    }
+  }
+}
+@media (width<600px){
+
+  .projects {
+
+    &__list {
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr;
+      gap: var(--gap-24);
+      justify-content: space-between;
+      max-height: calc((350px + var(--gap-24))*3);
+
+      &--show {
+        max-height: calc-size(max-content, size);
+      }
+    }
+  }
+}

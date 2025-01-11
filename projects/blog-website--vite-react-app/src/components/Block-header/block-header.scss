@@ -1,0 +1,168 @@
+@import "../../css/mixins/fonts-mixin.scss";
+
+.block-header{
+  gap: var(--gap-100);
+  display: flex;
+  flex-direction: column;
+
+  &__container{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-100);
+    padding: var(--gap-120) 0;
+  }
+
+  &__main-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--gap-80);
+    justify-content: space-between;
+
+  }
+
+  &__logo{
+    display: inline-block;
+
+    svg{
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  &__altLogo{
+    display: none;
+  }
+
+  &__text{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-30);
+  }
+
+  &__quote-name{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-16);
+  }
+
+  &__quote-altLogo{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__quote{
+    width: fit-content;
+    @include inter-medium;
+    font-size: var(--font-size-20);
+    color: var(--absolute-color-white);
+    background: var(--dark-color-20);
+    border-radius: var(--border-radius-4);
+    padding: var(--gap-6) var(--gap-10);
+  }
+
+  &__name{
+    @include Sans-medium;
+    font-size: var(--font-size-58);
+    line-height: 1.3em;
+    letter-spacing: -0.03em;
+    color: var(--absolute-color-white);
+
+  }
+
+  &__caption{
+    display: inline-block;
+    color: var(--gray-color-50);
+  }
+  &__altCaption{
+    display: none;
+    color: var(--gray-color-50);
+  }
+
+  &__link{
+    @include inter-regular;
+    font-size: var(--font-size-18);
+    background: var(--dark-color-08);
+    box-shadow: var(--border-dark-15);
+    border-radius: var(--border-radius-12);
+    color: var(--gray-color-60);
+    display: flex;
+    gap: var(--gap-10);
+    padding: var(--gap-18) var(--gap-24);
+  }
+
+  &__buttons{
+    display: flex;
+    gap: var(--gap-10);
+    padding: var(--gap-10);
+    background: var(--dark-color-08);
+    border-radius: var(--border-radius-10);
+    box-shadow: var(--border-dark-15);
+  }
+
+  &__button{
+    @include inter-regular;
+    color: var(--gray-color-60);
+    font-size: var(--font-size-18);
+    display: flex;
+    padding: var(--gap-18) var(--gap-38);
+    background: transparent;
+    border-radius: var(--border-radius-10);
+    box-shadow: var(--border-dark-15);
+    border: none;
+
+    &:hover{
+      background: var(--dark-color-15);
+      color: var(--absolute-color-white);
+    }
+  }
+
+
+}
+@media (width<=1600px) {
+  .block-header {
+    &__logo {
+
+      svg {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  }
+}
+@media (width<=1280px){
+  .block-header{
+    &__main-container{
+      flex-direction: column;
+    }
+
+    &__text{
+      width: 100%;
+    }
+
+    &__quote-name{
+      width: 100%;
+      justify-content: start;
+    }
+
+    &__caption{
+      display: none;
+    }
+    &__altCaption{
+
+      display: inline-block;
+    }
+    &__logo{
+      display: none;
+    }
+    &__altLogo{
+      display: inline-block;
+
+      svg{
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+}

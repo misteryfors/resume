@@ -1,0 +1,98 @@
+@import "../mixins/fonts-mixin.scss";
+
+@mixin block($width,$height,$border-radius,$background,$padding){
+  width: $width;
+  height: $height;
+  border-radius: $border-radius;
+  background: $background;
+  display: flex;
+  flex-direction: column;
+  padding: $padding;
+}
+
+
+.main{
+  padding: 40px 32px 28px 30px;
+  box-sizing: border-box;
+  margin-right: auto;
+  margin-left: auto;
+
+  &__grid{
+    display: grid;
+    grid-template-rows: 178px 180px 230px 173px;
+    grid-auto-columns: 355px 739px;
+    gap: 32px 30px;
+  }
+
+  &__slider{
+    grid-row: span 1;
+    grid-column: span 2;
+  }
+
+  &__portfolio{
+    grid-row: span 3;
+  }
+
+  &__chart{
+    grid-row: span 2;
+  }
+
+
+
+  &__name{
+    @include font-21-semi-bold;
+  }
+}
+
+@media (width<1440px) {
+  .main {
+    padding: 30px 24px 24px 23px;
+
+    &__grid {
+      display: grid;
+      grid-template-rows: 148px 160px 200px 150px;
+      grid-auto-columns: 300px 600px;
+      gap: 24px 23px;
+    }
+  }
+}
+
+@media (width<1000px) {
+  .main {
+    padding: 20px 16px 16px 15px;
+
+    &__grid {
+      display: grid;
+      grid-template-rows: 148px 320px 500px 200px;
+      grid-auto-columns: 540px;
+      gap: 24px 23px;
+    }
+
+    &__slider{
+      grid-row: span 1;
+      grid-column: span 1;
+    }
+
+    &__portfolio{
+      grid-row: span 1;
+    }
+
+    &__chart{
+      grid-row: span 1;
+    }
+  }
+}
+@media (width<800px){
+  .main {
+    width: 100%;
+    overflow: hidden;
+    padding: 30px 24px 24px 23px;
+
+    &__grid {
+      display: grid;
+      grid-template-rows: auto 300px auto auto;
+      grid-auto-columns: (100%);
+      gap: 24px;
+    }
+  }
+}

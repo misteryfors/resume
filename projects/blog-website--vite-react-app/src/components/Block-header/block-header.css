@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,500;1,14..32,500&family=Kumbh+Sans:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,500;1,14..32,500&family=Kumbh+Sans:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.block-header {
+  gap: var(--gap-100);
+  display: flex;
+  flex-direction: column;
+}
+.block-header__container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-100);
+  padding: var(--gap-120) 0;
+}
+.block-header__main-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-80);
+  justify-content: space-between;
+}
+.block-header__logo {
+  display: inline-block;
+}
+.block-header__logo svg {
+  width: 150px;
+  height: 150px;
+}
+.block-header__altLogo {
+  display: none;
+}
+.block-header__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-30);
+}
+.block-header__quote-name {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-16);
+}
+.block-header__quote-altLogo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.block-header__quote {
+  width: fit-content;
+  font-weight: 500;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.03em;
+  outline: none;
+  font-size: var(--font-size-20);
+  color: var(--absolute-color-white);
+  background: var(--dark-color-20);
+  border-radius: var(--border-radius-4);
+  padding: var(--gap-6) var(--gap-10);
+}
+.block-header__name {
+  font-weight: 500;
+  font-family: "Kumbh Sans", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.03em;
+  outline: none;
+  font-size: var(--font-size-58);
+  line-height: 1.3em;
+  letter-spacing: -0.03em;
+  color: var(--absolute-color-white);
+}
+.block-header__caption {
+  display: inline-block;
+  color: var(--gray-color-50);
+}
+.block-header__altCaption {
+  display: none;
+  color: var(--gray-color-50);
+}
+.block-header__link {
+  font-weight: 400;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.03em;
+  outline: none;
+  font-size: var(--font-size-18);
+  background: var(--dark-color-08);
+  box-shadow: var(--border-dark-15);
+  border-radius: var(--border-radius-12);
+  color: var(--gray-color-60);
+  display: flex;
+  gap: var(--gap-10);
+  padding: var(--gap-18) var(--gap-24);
+}
+.block-header__buttons {
+  display: flex;
+  gap: var(--gap-10);
+  padding: var(--gap-10);
+  background: var(--dark-color-08);
+  border-radius: var(--border-radius-10);
+  box-shadow: var(--border-dark-15);
+}
+.block-header__button {
+  font-weight: 400;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.03em;
+  outline: none;
+  color: var(--gray-color-60);
+  font-size: var(--font-size-18);
+  display: flex;
+  padding: var(--gap-18) var(--gap-38);
+  background: transparent;
+  border-radius: var(--border-radius-10);
+  box-shadow: var(--border-dark-15);
+  border: none;
+}
+.block-header__button:hover {
+  background: var(--dark-color-15);
+  color: var(--absolute-color-white);
+}
+
+@media (width <= 1600px) {
+  .block-header__logo svg {
+    width: 120px;
+    height: 120px;
+  }
+}
+@media (width <= 1280px) {
+  .block-header__main-container {
+    flex-direction: column;
+  }
+  .block-header__text {
+    width: 100%;
+  }
+  .block-header__quote-name {
+    width: 100%;
+    justify-content: start;
+  }
+  .block-header__caption {
+    display: none;
+  }
+  .block-header__altCaption {
+    display: inline-block;
+  }
+  .block-header__logo {
+    display: none;
+  }
+  .block-header__altLogo {
+    display: inline-block;
+  }
+  .block-header__altLogo svg {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/*# sourceMappingURL=block-header.css.map */
