@@ -1,0 +1,112 @@
+@import "../../../mixins/fonts-mixin.scss";
+
+@mixin block($width,$height,$border-radius,$background,$padding){
+  width: $width;
+  height: $height;
+  border-radius: $border-radius;
+  background: $background;
+  display: flex;
+  flex-direction: column;
+  padding: $padding;
+}
+
+.portfolio{
+  @include block(100%,100%,var(--border-radius-1),var(--primary-color-2),30px 30px 32px 30px);
+
+  gap: var(--gap-24);
+  overflow-y: auto;
+
+  &::-webkit-scrollbar{
+    width: 4px;
+    background: var(--primary-color-3);
+    color: var(--primary-color-2);
+  }
+
+  &::-webkit-scrollbar-thumb{
+    color: var(--primary-color-2);
+    background: var(--primary-color-4);
+  }
+
+
+  &__item{
+    display: flex;
+    gap: var(--gap-16);
+  }
+
+  &__item-icon{
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+
+  &__item-button{
+    @include block(44px,44px,var(--border-radius-1),var(--primary-color-1),10px);
+    border: none;
+    min-width: 44px;
+    min-height: 44px;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 0, 0, 0.3); // цвет наложения
+      opacity: 0; // начальная прозрачность, чтобы не отображался
+      transition: opacity 0.3s ease; // плавный переход
+      background-image: url("../../../public/delete-bin-2-line.svg");
+    }
+
+    // Эффект при наведении
+    &:hover::after {
+      opacity: 1; // показывает наложение при наведении
+    }
+  }
+
+  &__item-text{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: var(--gap-16);
+  }
+
+  &__item-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &--name{
+      @include font-16-medium;
+    }
+    &--price{
+      @include font-14-normal;
+    }
+  }
+
+  &__item-support{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+
+    &--different-up{
+      @include font-12-medium;
+      color: var(--font-color-4);
+    }
+    &--different-down{
+      @include font-12-medium;
+      color: var(--font-color-5);
+    }
+    &--price{
+      @include font-14-semi-bold;
+    }
+  }
+
+}

@@ -1,0 +1,22 @@
+.footer {
+  width: 100%;
+  padding: 32px;
+  box-sizing: border-box;
+
+  &__link{
+    font-size: var(--font-size-16);
+    line-height: var(--line-height-16);
+    font-weight: 400;
+    text-align: center;
+    color: rgba(245, 244, 244, 1);
+
+  }
+
+  &__link-span{
+    font-size: var(--font-size-16);
+    line-height: var(--line-height-16);
+    font-weight: 400;
+    text-align: center;
+    color: rgba(245, 244, 244, 1);
+  }
+}
