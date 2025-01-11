@@ -50,20 +50,20 @@
   },
   {
     "img":"WeatherApp.png",
-    "badges":[1,8,5,9],
+    "badges":[1,5,9,11],
     "id":"project 6",
     "title":"Weather-App",
-    "description":"Переписанный WeatheApp с использованием react и tailwind",
+    "description":"Переписанный WeatheApp с использованием react, tailwind + typescript",
     "date":"2024.12.23",
     "model":"https://www.figma.com/design/60Iap3oS9KpQ6XPuBK8CZ2/Weather-App.-1-sprint.-4-task?node-id=4056-3513&node-type=frame&t=2mTZerPDj5WoYQDM-0",
     "direct":"weatherApp-react-vite-tailwind"
   },
   {
     "img":"crypto-landing.png",
-    "badges":[1,4,8],
+    "badges":[1,4,10,11],
     "id":"project 7",
     "title":"Crypto-landing",
-    "description":"Основная страница приложения для контроля своего криптовалютного портфеля, с графиками портфолио и подключёнными api",
+    "description":"Перенесённый проект с html+js+css лэндинга на next+react+typescript",
     "date":"2025.01.08",
     "model":"https://www.figma.com/design/MXBe6O0vYuieKnzRjMQPQI/Figma-UI-kit---Cryptocurrency-Dashboard-V2-(Community)-(Community)?node-id=301-73213&node-type=canvas&t=UKDT1J44BGb7q1LM-0",
     "direct":"crypto-nextjs-react"
