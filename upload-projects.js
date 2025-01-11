@@ -5,6 +5,7 @@ import path from "path";
 const projectsDir = path.join(process.cwd(), "projects");
 const branchName = "projects";
 
+// Функция для рекурсивного копирования директорий
 function copyDirectory(src, dest) {
   if (!fs.existsSync(dest)) {
     fs.mkdirSync(dest, { recursive: true });
@@ -39,10 +40,14 @@ try {
   const gitLsOutput = execSync("git ls-files").toString().trim();
   if (gitLsOutput) {
     console.log("Удаление всех файлов...");
-    execSync("git rm -r --cached .");
+    execSync("git rm -r --cached ."); // Удаляем все файлы из репозитория, но не из локальной файловой системы
   } else {
     console.log("Нет файлов для удаления.");
   }
+
+  // Создание .gitignore с исключением node_modules и dist
+  console.log("Создание .gitignore...");
+  fs.writeFileSync(".gitignore", "node_modules/\ndist/\n", { flag: "w" });
 
   console.log("Добавление проектов...");
   const projectFolders = fs.readdirSync(projectsDir).filter((folder) =>
@@ -54,11 +59,8 @@ try {
     const destPath = path.join(process.cwd(), project);
 
     console.log(`Добавление проекта: ${project}`);
-    copyDirectory(srcPath, destPath);
+    copyDirectory(srcPath, destPath); // Копируем только необходимые файлы
   }
-
-  console.log("Создание .gitignore...");
-  fs.writeFileSync(".gitignore", "node_modules/\ndist/\n", { flag: "w" });
 
   console.log("Добавление изменений в Git...");
   execSync("git add .");
