@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--gap-24);
-  padding: var(--gap-16);
+  padding: var(--gap-24) var(--gap-16) var(--gap-16);
 }
 .projects__list {
   display: grid;
@@ -73,10 +73,16 @@
   display: flex;
   justify-content: space-between;
 }
+.projects__name-title {
+  font-size: 18px;
+  color: var(--gray-color-95);
+  white-space: nowrap;
+}
 .projects__badges {
   display: flex; /* Используйте flex для расположения значков */
   gap: var(--gap-8); /* Отступы между значками */
   z-index: 2; /* Обеспечьте, чтобы значки были поверх описания */
+  height: fit-content;
 }
 .projects__badge {
   width: 24px;
@@ -111,7 +117,7 @@
   align-items: center;
 }
 .projects__link {
-  width: 45%;
+  width: 30%;
   max-width: 129px;
   padding: var(--gap-8);
   color: var(--gray-color-60);

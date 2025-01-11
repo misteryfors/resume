@@ -8,10 +8,14 @@ const Header: React.FC = () => {
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
+        console.log("toggleMenu")
+        console.log(!isMenuOpen)
     };
 
     const closeMenu = () => {
-        setIsMenuOpen(false);
+        setIsMenuOpen(!isMenuOpen);
+        console.log("closeMenu")
+        console.log(!isMenuOpen)
     };
 
     return (
@@ -30,21 +34,18 @@ const Header: React.FC = () => {
                     </button>
                 </nav>
             </div>
-
-            {isMenuOpen && (
-                <div className="header__mobile-menu">
+                <div className={"header__mobile-menu"+ (isMenuOpen ? " open" : " close")}>
                     <div className="header__mobile-menu-overlay" onClick={closeMenu}></div>
                     <div className="header__mobile-menu-content">
                         <button className="header__mobile-menu-close" onClick={closeMenu}>
                             ✕
                         </button>
-                        <Link className="header__mobile-link" to="/">About me</Link>
-                        <Link className="header__mobile-link" to="/SkillsAndTools">SkillsAndTools</Link>
-                        <Link className="header__mobile-link" to="/Projects">Projects</Link>
+                        <Link className="header__mobile-link" to="/" onClick={closeMenu}>About me</Link>
+                        <Link className="header__mobile-link" to="/SkillsAndTools" onClick={closeMenu}>SkillsAndTools</Link>
+                        <Link className="header__mobile-link" to="/Projects" onClick={closeMenu}>Projects</Link>
                         <a className="header__mobile-link" target="_blank" href="https://misteryfors.github.io/resume/" onClick={closeMenu}>My GitHub</a>
                     </div>
                 </div>
-            )}
         </header>
     );
 };

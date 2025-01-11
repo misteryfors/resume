@@ -87,9 +87,17 @@
     right: 0;
     width: 100%;
     height: 100%;
-    display: flex;
     justify-content: flex-end;
     z-index: 999;
+    transition: right 0.5s ease-in-out;
+    display: none;
+
+    &.open{
+      right: 0px;
+    }
+    &.close{
+      right: 800px;
+    }
   }
 
   &__mobile-menu-overlay {
@@ -100,6 +108,13 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 1;
+
+    &.open{
+      display: block;
+    }
+    &.close{
+      display: none;
+    }
   }
 
   &__mobile-menu-content {
@@ -113,6 +128,7 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
+
   }
 
   &__mobile-menu-close {
@@ -121,6 +137,7 @@
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
+    color: var(--gray-color-60);
   }
 
   &__mobile-link {
@@ -160,6 +177,9 @@
     }
     &__more-options {
       display: block;
+    }
+    &__mobile-menu{
+      display: flex;
     }
   }
 }

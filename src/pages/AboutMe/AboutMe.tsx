@@ -12,7 +12,7 @@ const AboutMe: React.FC = () => {
 
     skills: {
         languages: ["JavaScript", "TypeScript", "HTML5", "SCSS"],
-        frameworks: ["React", "Redux", "Zustand"],
+        frameworks: ["React", "Redux", "Tailwind", "NextJS"],
         tools: ["Vite", "Git", "Docker", "CI/CD"],
         design: ["Figma", "Adobe XD"]
     };  

@@ -1,0 +1,101 @@
+.sidebar {
+  width: 256px;
+  height: 100vh;
+  background: var(--primary-color-2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-16);
+  font-weight: 600;
+  color: var(--font-color-1);
+  line-height: normal;
+  padding: 32px 31px 32px 28px;
+  box-sizing: border-box;
+  gap: 50px;
+  position: sticky;
+  top: 0;
+}
+.sidebar__logo {
+  width: 170px;
+  height: 41px;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-20);
+  font-size: var(--font-size-21);
+  font-weight: 500;
+  color: var(--font-color-1);
+  line-height: normal;
+}
+.sidebar__nav-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-grow: 1;
+}
+.sidebar__buttons-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-16);
+}
+.sidebar__link, .sidebar__button {
+  width: 197px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  background: none;
+  border: none;
+  padding: 13px 19px 12px;
+  box-sizing: border-box;
+  gap: var(--gap-20);
+  border-radius: var(--border-radius-2);
+  font-size: var(--font-size-14);
+  font-weight: 400;
+  color: var(--font-color-3);
+  line-height: normal;
+}
+.sidebar__link:hover, .sidebar__button:hover {
+  background: var(--primary-color-3);
+  font-size: var(--font-size-14);
+  font-weight: 600;
+  color: var(--font-color-1);
+  line-height: normal;
+}
+
+@media (width < 1440px) {
+  .sidebar {
+    padding: 26px 25px 26px 20px;
+    gap: 40px;
+  }
+  .sidebar__logo {
+    width: 160px;
+    height: 40px;
+  }
+  .sidebar__link, .sidebar__button {
+    width: 160px;
+    height: 40px;
+    padding: 11px 15px 10px;
+  }
+}
+@media (width < 1000px) {
+  .sidebar {
+    padding: 20px 19px 20px 16px;
+  }
+  .sidebar__logo {
+    width: 140px;
+    height: 30px;
+  }
+  .sidebar__link, .sidebar__button {
+    width: 140px;
+    height: 30px;
+    padding: 9px 12px 8px;
+  }
+}
+@media (width < 800px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=Sidebar.css.map */

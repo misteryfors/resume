@@ -1,0 +1,15 @@
+@import "./header/header.css";
+@import "./main/main.css";
+.content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.lists{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--gap-32) 0;
+    gap: var(--gap-24);
+}
