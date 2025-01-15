@@ -63,7 +63,11 @@
     display: none;
     background: none;
     border: none;
-    color: var(--absolute-color-white);
+    background: var(--yellow-color-55);
+    border-radius: var(--border-radius-10);
+    outline: none;
+    color: var(--dark-color-08);
+    box-sizing: border-box;
   }
 
   &__contact{
@@ -106,14 +110,14 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     z-index: 1;
   }
 
   &__mobile-menu-content {
     position: relative;
     width: 75%;
-    max-width: 300px;
+    max-width: 250px;
     height: 100%;
     background: var(--dark-color-08);
     box-shadow: 1px 0 0px 0px inset var(--dark-color-15);
@@ -130,6 +134,7 @@
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--gray-color-60);
+    -webkit-tap-highlight-color: transparent;
   }
 
   &__mobile-link {
@@ -141,10 +146,9 @@
     border-bottom: 1px solid var(--gray-color-60);
     display: block;
     cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 
-    &:hover {
-      color: #007BFF;
-    }
   }
 
 }
@@ -161,10 +165,19 @@
 
 @media (width<=800px){
   .header {
+    flex: 0 0 auto; // Фиксированная высота для header
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    &__contact{
+      height: 40px;
+    }
+
     &__pages-link{
       display: none;
     }
-    &__contact{
+    &__logo{
       display: none;
     }
     &__more-options {

@@ -11,6 +11,8 @@
   display: flex;
   flex-direction: column;
   gap: var(--gap-16);
+  min-width: fit-content;
+  padding: 0 var(--gap-32);
 }
 .about-me__heading {
   font-weight: 500;
@@ -34,6 +36,15 @@
   font-size: var(--font-size-30);
   color: #9CDCFE;
 }
+.about-me__code {
+  padding: 0 var(--gap-32);
+  width: fit-content;
+  min-width: 40vw;
+}
+.about-me__cursor {
+  color: var(--absolute-color-white);
+}
+
 .code-block {
   background-color: var(--dark-color-08);
   display: flex;
@@ -81,9 +92,24 @@
 .code-block__punctuation {
   color: #D4D4D4; /* Цвет для двоеточий и фигурных скобок */
 }
-.code-block__indent-1, .code-block__indent-2, .code-block__indent-3 {
+.code-block__indent-1 {
   display: inline-block; /* Поменять на блочный элемент */
-  padding-left: 32px;
+  padding-left: calc(var(--code-font-size) * 2);
+}
+.code-block__indent-2 {
+  display: inline-block; /* Поменять на блочный элемент */
+  padding-left: calc(var(--code-font-size) * 4);
+}
+.code-block__indent-3 {
+  display: inline-block; /* Поменять на блочный элемент */
+  padding-left: calc(var(--code-font-size) * 6);
+}
+
+.code-block__cursor {
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  color: #ffffff;
 }
 
 .code-block[contenteditable=true] {
@@ -94,22 +120,15 @@
 
 @media (width <= 1600px) {
   .code-block {
-    font-size: 14px;
     padding: 8px;
-  }
-  .code-block__indent-1, .code-block__indent-2, .code-block__indent-3 {
-    padding-left: 24px;
   }
 }
 @media (width <= 800px) {
   .about-me {
     flex-direction: column;
   }
-  .code-block {
-    font-size: 10px;
-  }
-  .code-block__indent-1, .code-block__indent-2, .code-block__indent-3 {
-    padding-left: 16px;
+  .about-me__code {
+    min-height: 50dvw;
   }
 }
 

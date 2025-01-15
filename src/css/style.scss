@@ -45,6 +45,8 @@
     --font-size-16:16px;
     --font-size-10:10px;
 
+    --code-font-size:16px;
+
 
 
     --border-radius-15:15px;
@@ -109,8 +111,8 @@ main{
 
 }
 svg{
-    width: 100% !important;
-    height: 100% !important;
+    //width: 100% !important;
+    //height: 100% !important;
 }
 
 
@@ -136,6 +138,8 @@ svg{
         --font-size-20:16px;
         --font-size-18:14px;
         --font-size-16:12px;
+
+        --code-font-size:14px;
 
         --gap-150:100px;
         --gap-120:80px;
@@ -171,6 +175,8 @@ svg{
         --font-size-22:16px;
         --font-size-20:16px;
         --font-size-18:14px;
+
+        --code-font-size:12px;
 
         --gap-150:40px;
         --gap-120:40px;

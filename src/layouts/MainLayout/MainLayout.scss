@@ -13,7 +13,6 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-
   }
 
   &__scroll-section {
@@ -52,6 +51,7 @@
     box-sizing: border-box;
   }
 }
+
 @media (width<=1280px){
   .Layout{
     padding: 0;
@@ -64,10 +64,19 @@
       height: auto;
       min-height: 100dvh;
       width:100%;
+      overflow: unset;
+
       &::before {
       box-shadow: none;
       }
     }
   }
 
+}
+@media (width<=800px) {
+  .Layout {
+    &__content {
+      overflow: visible;
+    }
+  }
 }

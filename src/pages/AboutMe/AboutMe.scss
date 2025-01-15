@@ -11,6 +11,8 @@
         display: flex;
         flex-direction: column;
         gap: var(--gap-16);
+        min-width: fit-content;
+        padding: 0 var(--gap-32);
     }
 
     &__heading{
@@ -27,6 +29,15 @@
 
     &__quote{
 
+    }
+    &__code{
+        padding: 0 var(--gap-32);
+        width: fit-content;
+        min-width: 40vw;
+    }
+
+    &__cursor{
+        color: var(--absolute-color-white);
     }
 }
 
@@ -48,6 +59,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     overflow: auto;
     font-size: var(--code-font-size);
+
 
     /* Стили для скроллбара WebKit-браузеров (Chrome, Safari, Edge) */
     &::-webkit-scrollbar {
@@ -89,14 +101,28 @@
         color: #D4D4D4; /* Цвет для двоеточий и фигурных скобок */
     }
 
-    &__indent-1,
-    &__indent-2,
+    &__indent-1{
+        display: inline-block; /* Поменять на блочный элемент */
+        padding-left: calc(var(--code-font-size)*2);
+    }
+    &__indent-2{
+        display: inline-block; /* Поменять на блочный элемент */
+        padding-left: calc(var(--code-font-size)*4);
+    }
     &__indent-3 {
         display: inline-block; /* Поменять на блочный элемент */
-        padding-left: 32px;
+        padding-left: calc(var(--code-font-size)*6);
     }
 
 }
+
+.code-block__cursor {
+    display: inline-block;
+    width: 1px;
+    height: 1em;
+    color: #ffffff;
+}
+
 
 .code-block[contenteditable="true"] {
     outline: none;
@@ -106,14 +132,7 @@
 }
 @media (width<=1600px){
     .code-block{
-        font-size: 14px;
         padding: 8px;
-
-        &__indent-1,
-        &__indent-2,
-        &__indent-3 {
-            padding-left: 24px;
-    }
     }
        
     
@@ -122,17 +141,10 @@
 @media (width<=800px){
     .about-me{
         flex-direction: column;
-    }
-    .code-block{
-        font-size: 10px;
 
-        &__indent-1,
-        &__indent-2,
-        &__indent-3 {
-            padding-left: 16px;
-        } 
+        &__code{
+            min-height: 50dvw;
+        }
     }
-      
-
 }
 

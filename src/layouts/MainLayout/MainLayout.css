@@ -55,9 +55,15 @@
     height: auto;
     min-height: 100dvh;
     width: 100%;
+    overflow: unset;
   }
   .Layout__content::before {
     box-shadow: none;
+  }
+}
+@media (width <= 800px) {
+  .Layout__content {
+    overflow: visible;
   }
 }
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import { ReactComponent as MoreOptions } from '../../assets/More-options.svg';
+import { ReactComponent as GitHub } from '../../assets/Github.svg';
 
 const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +25,7 @@ const Header: React.FC = () => {
                         <Link className="header__page-link" to="/SkillsAndTools">SkillsAndTools</Link>
                         <Link className="header__page-link" to="/Projects">Projects</Link>
                     </div>
-                    <a className="header__contact" target="_blank" href="https://github.com/misteryfors/resume">My GitHub</a>
+                    <a className="header__contact" target="_blank" href="https://github.com/misteryfors/resume">My GitHub <GitHub className="Icon-medium"/></a>
                     <button className="header__more-options" onClick={toggleMenu}>
                         <MoreOptions />
                     </button>
@@ -39,7 +40,6 @@ const Header: React.FC = () => {
                         <Link className="header__mobile-link" to="/" onClick={closeMenu}>About me</Link>
                         <Link className="header__mobile-link" to="/SkillsAndTools" onClick={closeMenu}>SkillsAndTools</Link>
                         <Link className="header__mobile-link" to="/Projects" onClick={closeMenu}>Projects</Link>
-                        <a className="header__mobile-link" target="_blank" href="https://misteryfors.github.io/resume/" onClick={closeMenu}>My GitHub</a>
                     </div>
                 </div>
         </header>
