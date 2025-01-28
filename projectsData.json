@@ -67,5 +67,15 @@
     "date":"2025.01.08",
     "model":"https://www.figma.com/design/MXBe6O0vYuieKnzRjMQPQI/Figma-UI-kit---Cryptocurrency-Dashboard-V2-(Community)-(Community)?node-id=301-73213&node-type=canvas&t=UKDT1J44BGb7q1LM-0",
     "direct":"crypto-nextjs-react"
+  },
+  {
+    "img":"to-do-list.png",
+    "badges":[1,4,11,12],
+    "id":"project 8",
+    "title":"To-Do-list",
+    "description":"to-do лист с адаптивом, реализованый с react dnd и redux, также проведено тестирование базовых функций через vitest",
+    "date":"2024.10.28",
+    "model":"https://www.figma.com/design/0InXcSFs6vm5c01OqQEnNs/Trello-board---auto-layout-cards-(Community)?node-id=5-1008&node-type=frame&t=PELKZ6f8NCrIyM7I-0",
+    "direct":"to-do-react-vite"
   }
 ]
